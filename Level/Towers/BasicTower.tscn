@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0i21jaey6f7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uus48"]
+albedo_color = Color(0, 0, 0.431373, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fydtc"]
+
+[node name="BasicTower" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -5, 1, 0)
+material_override = SubResource("StandardMaterial3D_uus48")
+mesh = SubResource("PrismMesh_fydtc")
