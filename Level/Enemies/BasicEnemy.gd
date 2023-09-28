@@ -41,10 +41,8 @@ func set_movement_target(movement_target: Vector3):
 
 func go_to_next_waypoint():
 	var movement_target_position:Vector3
-	
 	if _waypoints.size() > 0:
 		movement_target_position = _waypoints[_waypoint_index].global_transform.origin
-	
 	set_movement_target(movement_target_position)
 
 func is_target_in_range(target_node,threshold):
@@ -63,7 +61,7 @@ func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
 		return
 
-	if is_waypoint_reached() and has_waypoint_been_just_reached == false:
+	if has_waypoint_been_just_reached == false and is_waypoint_reached():
 		# Make sure we don't crash if we increment the index and run go_to_next_waypoint
 		if _waypoint_index + 1 > _waypoints.size() -1:
 			return
@@ -73,7 +71,7 @@ func _physics_process(delta):
 		go_to_next_waypoint()
 		
 	
-	if is_out_of_last_waypoint_range() and has_waypoint_been_just_reached != false:
+	if has_waypoint_been_just_reached != false and is_out_of_last_waypoint_range():
 		has_waypoint_been_just_reached = false
 	
 	
