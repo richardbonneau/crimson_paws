@@ -22,7 +22,3 @@ shape = SubResource("BoxShape3D_p5i3t")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_max_distance = 14.61
-path_postprocessing = 1
-
-[node name="WaypointFinder" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

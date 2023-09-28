@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3uca5j7at3pi"]
+
+[ext_resource type="Script" path="res://Level/Zones/Start.gd" id="1_7tvay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ph1we"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjp2v"]
+albedo_color = Color(0, 0.647059, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n3ypa"]
+
+[node name="Start" type="Area3D" groups=["Exit", "Start"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -4)
+script = ExtResource("1_7tvay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ph1we")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.4, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_qjp2v")
+mesh = SubResource("BoxMesh_n3ypa")

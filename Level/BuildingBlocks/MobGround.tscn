@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg4geq78kba0l"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhdgd"]
-vertices = PackedVector3Array(-1, 1.4828, -1, -1, 1.4828, 1, 1, 1.4828, 1, 1, 1.4828, -1)
+vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+sample_partition_type = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t0an8"]
 
@@ -20,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
 navigation_mesh = SubResource("NavigationMesh_uhdgd")
 
 [node name="NavMesh" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.982804, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 1, 0)
 visible = false
 mesh = SubResource("PlaneMesh_t0an8")
 
@@ -34,3 +35,6 @@ mesh = SubResource("BoxMesh_n2lsi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_sf5m3")
+
+[node name="Waypoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

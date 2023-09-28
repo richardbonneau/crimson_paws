@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=11 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Level/Towers/BasicTower.tscn" id="3_osceu"]
 [ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Level/Enemies/BasicEnemy.tscn" id="4_218k4"]
+[ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)
@@ -16,6 +17,8 @@ sky_material = SubResource("ProceduralSkyMaterial_1py0j")
 [sub_resource type="Environment" id="Environment_124e3"]
 background_mode = 2
 sky = SubResource("Sky_77ui0")
+ssr_enabled = true
+ssao_enabled = true
 sdfgi_enabled = true
 glow_intensity = 3.58
 glow_strength = 1.46
@@ -33,7 +36,7 @@ environment = SubResource("Environment_124e3")
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 34, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -22, 18, 2)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -4, 18, 2)
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -108,14 +111,6 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, 0)
 skeleton = NodePath("../../..")
 
-[node name="TowerGround11" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround12" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, 0)
-skeleton = NodePath("../../..")
-
 [node name="TowerGround18" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 0, 2)
 skeleton = NodePath("../../..")
@@ -124,376 +119,12 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, 2)
 skeleton = NodePath("../../..")
 
-[node name="TowerGround20" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround22" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, 2)
-skeleton = NodePath("../../..")
-
 [node name="TowerGround23" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 0, 4)
 skeleton = NodePath("../../..")
 
 [node name="TowerGround24" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround25" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround26" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround27" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround28" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround30" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround31" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround32" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround33" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround34" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround35" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround36" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround37" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround38" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround39" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround40" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround41" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround42" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround43" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround44" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround45" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround46" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround47" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround48" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround49" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround50" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround51" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround52" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround53" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround54" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround55" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround56" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround57" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround58" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround59" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround60" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround121" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround122" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround123" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround124" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround125" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround126" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround127" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround128" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround129" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround130" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround131" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround132" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround133" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround134" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround135" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround136" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, 0)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround137" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, 2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround138" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, 4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround139" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -6)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround140" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround141" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround142" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -6)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround143" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround144" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround145" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -6)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround146" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -4)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround147" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -2)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround148" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround149" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround150" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround151" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround152" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround153" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround154" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround155" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround156" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround157" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround158" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround159" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 0, -14)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround160" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround161" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround162" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 0, -14)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround163" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround164" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround165" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 0, -14)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround166" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround167" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround168" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -14)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround169" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround170" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround171" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -14)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround172" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -18)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround173" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -16)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround174" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -14)
 skeleton = NodePath("../../..")
 
 [node name="TowerGround61" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
@@ -532,6 +163,30 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -8)
 skeleton = NodePath("../../..")
 
+[node name="TowerGround196" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, -8)
+skeleton = NodePath("../../..")
+
+[node name="TowerGround197" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, -10)
+skeleton = NodePath("../../..")
+
+[node name="TowerGround198" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, -12)
+skeleton = NodePath("../../..")
+
+[node name="TowerGround199" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 4)
+skeleton = NodePath("../../..")
+
+[node name="TowerGround200" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 2)
+skeleton = NodePath("../../..")
+
+[node name="TowerGround201" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0)
+skeleton = NodePath("../../..")
+
 [node name="TowerGround70" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 0, -8)
 skeleton = NodePath("../../..")
@@ -564,28 +219,12 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, -12)
 skeleton = NodePath("../../..")
 
-[node name="TowerGround78" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround79" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, -12)
-skeleton = NodePath("../../..")
-
 [node name="TowerGround80" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 0, -10)
 skeleton = NodePath("../../..")
 
 [node name="TowerGround81" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround82" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround83" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, -10)
 skeleton = NodePath("../../..")
 
 [node name="TowerGround84" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
@@ -596,153 +235,7 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 0, -8)
 skeleton = NodePath("../../..")
 
-[node name="TowerGround86" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround87" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround88" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround89" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround90" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround91" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround92" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround93" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround94" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround95" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround96" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround97" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround98" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround99" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround100" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround101" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround102" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround103" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround104" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround105" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround106" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround107" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround108" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround109" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround110" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround111" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround112" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround113" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround114" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround115" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround116" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround117" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround118" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -12)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround119" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -10)
-skeleton = NodePath("../../..")
-
-[node name="TowerGround120" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 0, -8)
-skeleton = NodePath("../../..")
-
-[node name="MobGround" type="Node3D" parent="Level/BuildingBlocks"]
-
-[node name="MobGround2" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
-
-[node name="MobGround5" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+[node name="MobGround" type="Node3D" parent="Level/BuildingBlocks" groups=["MobGround"]]
 
 [node name="MobGround8" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
@@ -750,85 +243,112 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 [node name="MobGround11" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
 
-[node name="MobGround14" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+[node name="MobGround2" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
 
-[node name="MobGround17" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -4)
+[node name="MobGround5" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
 
 [node name="MobGround20" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
 
-[node name="MobGround23" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+[node name="MobGround15" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
 
+[node name="MobGround14" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+
+[node name="MobGround16" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -4)
+
+[node name="MobGround17" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -6)
+
+[node name="MobGround18" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -8)
+
+[node name="MobGround19" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -10)
+
+[node name="MobGround21" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12)
+
+[node name="MobGround22" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -14)
+
+[node name="MobGround23" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -14)
+
+[node name="MobGround24" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -14)
+
+[node name="MobGround25" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -16)
+
 [node name="MobGround26" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -18)
+
+[node name="MobGround27" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -18)
+
+[node name="MobGround28" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -18)
 
 [node name="MobGround29" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -18)
+
+[node name="MobGround30" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -16)
+
+[node name="MobGround31" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
 
 [node name="MobGround32" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
+
+[node name="MobGround33" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="MobGround34" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
 
 [node name="MobGround35" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
+
+[node name="MobGround36" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
+
+[node name="MobGround37" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
 
 [node name="MobGround38" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+
+[node name="MobGround39" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="MobGround40" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 
 [node name="MobGround41" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
 
-[node name="MobGround50" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -4)
-
-[node name="MobGround53" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -4)
-
-[node name="MobGround56" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -4)
-
-[node name="MobGround59" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -4)
-
-[node name="MobGround62" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -4)
-
-[node name="MobGround65" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -4)
-
-[node name="MobGround66" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -6)
-
-[node name="MobGround70" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -8)
-
-[node name="MobGround71" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -10)
-
-[node name="MobGround72" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -12)
-
-[node name="MobGround76" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -14)
-
-[node name="MobGround77" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -16)
-
-[node name="MobGround78" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -18)
-
-[node name="MobGround44" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -4)
-
-[node name="MobGround47" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -4)
+[node name="MobGround42" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="UnwalkableGround" type="Node3D" parent="Level/BuildingBlocks"]
 
 [node name="UnwalkableGround" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="UnwalkableGround69" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="UnwalkableGround70" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="UnwalkableGround71" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
 
 [node name="UnwalkableGround2" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
@@ -847,129 +367,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2)
 
 [node name="UnwalkableGround7" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -2)
-
-[node name="UnwalkableGround8" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -2)
-
-[node name="UnwalkableGround9" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -2)
-
-[node name="UnwalkableGround10" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -2)
-
-[node name="UnwalkableGround11" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -2)
-
-[node name="UnwalkableGround12" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -2)
-
-[node name="UnwalkableGround13" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -2)
-
-[node name="UnwalkableGround14" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -2)
-
-[node name="UnwalkableGround15" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -2)
-
-[node name="UnwalkableGround16" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -2)
-
-[node name="UnwalkableGround17" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -2)
-
-[node name="UnwalkableGround18" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -2)
-
-[node name="UnwalkableGround19" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -2)
-
-[node name="UnwalkableGround20" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -2)
-
-[node name="UnwalkableGround41" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -2)
-
-[node name="UnwalkableGround42" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -2)
-
-[node name="UnwalkableGround21" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -6)
-
-[node name="UnwalkableGround22" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -6)
-
-[node name="UnwalkableGround23" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -6)
-
-[node name="UnwalkableGround24" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -6)
-
-[node name="UnwalkableGround25" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -6)
-
-[node name="UnwalkableGround26" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -6)
-
-[node name="UnwalkableGround27" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -6)
-
-[node name="UnwalkableGround28" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -6)
-
-[node name="UnwalkableGround29" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -6)
-
-[node name="UnwalkableGround30" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -6)
-
-[node name="UnwalkableGround43" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -6)
-
-[node name="UnwalkableGround44" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -2)
-
-[node name="UnwalkableGround45" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -4)
-
-[node name="UnwalkableGround46" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -6)
-
-[node name="UnwalkableGround47" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -8)
-
-[node name="UnwalkableGround48" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -10)
-
-[node name="UnwalkableGround49" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -12)
-
-[node name="UnwalkableGround50" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -14)
-
-[node name="UnwalkableGround51" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -16)
-
-[node name="UnwalkableGround56" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -18)
-
-[node name="UnwalkableGround57" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -18)
-
-[node name="UnwalkableGround58" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -16)
-
-[node name="UnwalkableGround52" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -8)
-
-[node name="UnwalkableGround53" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -10)
-
-[node name="UnwalkableGround54" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -12)
-
-[node name="UnwalkableGround55" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -14)
 
 [node name="UnwalkableGround31" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
@@ -992,25 +389,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6)
 [node name="UnwalkableGround37" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -6)
 
-[node name="UnwalkableGround38" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -6)
-
-[node name="UnwalkableGround39" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -6)
-
-[node name="UnwalkableGround40" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -6)
-
 [node name="Zones" type="Node3D" parent="Level/BuildingBlocks"]
 
 [node name="Exit" parent="Level/BuildingBlocks/Zones" groups=["Exit"] instance=ExtResource("3_h8eii")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 2, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+
+[node name="Start" parent="Level/BuildingBlocks/Zones" instance=ExtResource("5_0j6or")]
 
 [node name="Towers" type="Node3D" parent="Level"]
 
 [node name="BasicTower" parent="Level/Towers" instance=ExtResource("3_osceu")]
 
 [node name="Enemies" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="BasicEnemy" parent="Level/Enemies" instance=ExtResource("4_218k4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
