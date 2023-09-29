@@ -17,7 +17,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed && event.keycode == KEY_A:
 			print("A key was pressed.")
-			$Mesh.visible = false
+			$serpent.visible = false
 			$DeathParticles.restart()
 
 
