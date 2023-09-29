@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://filtursrou60"]
+[gd_scene load_steps=8 format=3 uid="uid://filtursrou60"]
 
 [ext_resource type="Script" path="res://Level/Enemies/BasicEnemy.gd" id="1_f3akr"]
+[ext_resource type="Material" uid="uid://cl0d2no6865ad" path="res://Level/Enemies/Particles/DyingEnemy.tres" id="2_p86gp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oethn"]
 albedo_color = Color(0.541176, 0, 0, 1)
@@ -8,6 +9,20 @@ albedo_color = Color(0.541176, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_y3web"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5i3t"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lns22"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 5, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+tangential_accel_min = 55.67
+tangential_accel_max = 55.67
+
+[sub_resource type="QuadMesh" id="QuadMesh_c2cw6"]
+material = ExtResource("2_p86gp")
 
 [node name="BasicEnemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -26,3 +41,11 @@ path_postprocessing = 1
 
 [node name="WaypointFinder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="DeathParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_lns22")
+draw_pass_1 = SubResource("QuadMesh_c2cw6")

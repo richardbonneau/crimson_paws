@@ -13,6 +13,14 @@ var _waypoints = []
 var movement_speed: float = 7
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed && event.keycode == KEY_A:
+			print("A key was pressed.")
+			$Mesh.visible = false
+			$DeathParticles.restart()
+
+
 func _ready():
 	#	Get the corners array
 	start_node = get_tree().get_nodes_in_group("Start")[0]
