@@ -91,4 +91,5 @@ func _physics_process(delta):
 	new_velocity = new_velocity * movement_speed
 
 	velocity = new_velocity
+	look_at(_waypoints[_waypoint_index].global_transform.origin)
 	move_and_slide()
