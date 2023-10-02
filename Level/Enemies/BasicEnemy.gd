@@ -17,8 +17,11 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed && event.keycode == KEY_A:
 			print("A key was pressed.")
-			$serpent.visible = false
-			$DeathParticles.restart()
+			death()
+
+func death():
+	$serpent.visible = false
+	$DeathParticles.restart()
 
 
 func _ready():
