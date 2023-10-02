@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg4geq78kba0l"]
+[gd_scene load_steps=7 format=3 uid="uid://bg4geq78kba0l"]
+
+[ext_resource type="PackedScene" uid="uid://b33d0vf5ib4iw" path="res://Level/BuildingBlocks/Tiles/red_carpet_envy_tile.tscn" id="1_67mq4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhdgd"]
 vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
@@ -25,8 +27,12 @@ transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 1, 0)
 visible = false
 mesh = SubResource("PlaneMesh_t0an8")
 
+[node name="tiles red carpet" parent="." instance=ExtResource("1_67mq4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, -8.74228e-08, -1, -8.74228e-08, -1, 8.74228e-08, -4.37114e-08, 0, 0.95, 0)
+
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_h4cfa")
 mesh = SubResource("BoxMesh_n2lsi")
 
