@@ -1,5 +1,11 @@
 extends CharacterBody3D
 
+# Health
+var max_health:int = 5
+var current_health:int = max_health
+var is_alive:bool = true
+
+# Nav
 @export var target_reached_offset_threshold:float = 1
 @export var buffer_distance_once_waypoint_reached:float = target_reached_offset_threshold + 1
 var has_waypoint_been_just_reached:bool = false
@@ -19,9 +25,17 @@ func _input(event):
 			print("A key was pressed.")
 			death()
 
+
+
+func take_damage(incoming_damage:int):
+	current_health = current_health - incoming_damage
+	if current_health < 0:
+		death()
+
 func death():
 	$serpent.visible = false
 	$DeathParticles.restart()
+	$Health/DeathTimer.start()
 
 
 func _ready():
