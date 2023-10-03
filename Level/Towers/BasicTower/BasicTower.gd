@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-var is_detection_visualizer_visible:bool = false :
+@export var is_detection_visualizer_visible:bool = false :
 	set(value):
 		is_detection_visualizer_visible = value
 		$Detection/DetectionVisualizer.visible = value

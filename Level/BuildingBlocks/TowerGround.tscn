@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://nfjm7kkpowr0"]
+[gd_scene load_steps=5 format=3 uid="uid://nfjm7kkpowr0"]
 
+[ext_resource type="Texture2D" uid="uid://exs2mt5xnr60" path="res://Level/BuildingBlocks/RawImports/fancy_black_flipped_tiles fancy black.png" id="1_sd52b"]
 [ext_resource type="PackedScene" uid="uid://45noid7xnd8b" path="res://Level/BuildingBlocks/Tiles/black_envy_tile.tscn" id="1_ysabe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noyrx"]
-albedo_color = Color(0, 0.486275, 0, 1)
+albedo_texture = ExtResource("1_sd52b")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
 
@@ -11,9 +12,9 @@ albedo_color = Color(0, 0.486275, 0, 1)
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_noyrx")
 mesh = SubResource("BoxMesh_n2lsi")
 
 [node name="BlackEnvyTile" parent="." instance=ExtResource("1_ysabe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+visible = false
