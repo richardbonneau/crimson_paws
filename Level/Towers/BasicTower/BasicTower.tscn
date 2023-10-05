@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://0i21jaey6f7i"]
+[gd_scene load_steps=10 format=3 uid="uid://0i21jaey6f7i"]
 
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/BasicTower.gd" id="1_7y3s0"]
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/DetectionArea.gd" id="2_ucdw4"]
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/Shooting.gd" id="3_rkmok"]
+[ext_resource type="Script" path="res://Level/Towers/BasicTower/TargetList.gd" id="4_aut7y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uus48"]
 albedo_color = Color(0, 0, 0.431373, 1)
@@ -47,8 +48,11 @@ mesh = SubResource("CapsuleMesh_5u6lr")
 [node name="Shooting" type="Node3D" parent="."]
 script = ExtResource("3_rkmok")
 
-[node name="Timer" type="Timer" parent="Shooting"]
+[node name="TargetList" type="Node" parent="Shooting"]
+script = ExtResource("4_aut7y")
+
+[node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 
 [connection signal="body_entered" from="Detection/DetectionArea" to="Detection/DetectionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Detection/DetectionArea" to="Detection/DetectionArea" method="_on_body_exited"]
-[connection signal="timeout" from="Shooting/Timer" to="Shooting" method="_on_timer_timeout"]
+[connection signal="timeout" from="Shooting/ShootCooldownTimer" to="Shooting" method="_on_ShootCooldownTimer_timeout"]
