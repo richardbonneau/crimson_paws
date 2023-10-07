@@ -45,6 +45,7 @@ environment = SubResource("Environment_124e3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.5, 0.433013, 0.75, 0.224144, -0.771811, 0.595035, 0.836516, 0.465625, 0.288849, 0, 9, 0)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -4)
@@ -394,23 +395,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Towers" type="Node3D" parent="Level"]
 
 [node name="BasicTower" parent="Level/Towers" instance=ExtResource("3_osceu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -12)
 detection_radius = 10.0
 
 [node name="Enemies" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="BasicEnemy4" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
-collision_layer = 0
-collision_mask = 0
-movement_speed = 8.0
-
-[node name="BasicEnemy5" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -4)
+[node name="BasicEnemy" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
 
 [node name="BasicEnemy2" parent="Level/Enemies" instance=ExtResource("4_218k4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
-
-[node name="BasicEnemy3" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -4)

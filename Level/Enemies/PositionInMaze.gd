@@ -1,11 +1,9 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+@onready var parent:CharacterBody3D = self.get_parent()
+@onready var navigationAgent3D:NavigationAgent3D = parent.get_node("NavigationAgent3D")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	print(navigationAgent3D)
+	
