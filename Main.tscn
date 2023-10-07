@@ -76,7 +76,7 @@ spot_range = 78.793
 spot_attenuation = 0.0035205
 spot_angle = 19.13
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -4, 18, 2)
 attributes = SubResource("CameraAttributesPractical_i52lx")
 
@@ -400,17 +400,24 @@ detection_radius = 10.0
 [node name="Enemies" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
+[node name="BasicEnemy1" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -4)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BasicEnemy2" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -4)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BasicEnemy3" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
+collision_layer = 0
+collision_mask = 0
+movement_speed = 6.0
+
 [node name="BasicEnemy4" parent="Level/Enemies" instance=ExtResource("4_218k4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
 collision_layer = 0
 collision_mask = 0
 movement_speed = 8.0
-
-[node name="BasicEnemy5" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -4)
-
-[node name="BasicEnemy2" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
-
-[node name="BasicEnemy3" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -4)

@@ -53,7 +53,6 @@ func go_to_next_waypoint():
 func is_target_in_range(target_node,threshold):
 	var distance = waypointFinder.global_transform.origin.distance_to(target_node.global_transform.origin)
 	distance_to_next_waypoint = distance
-	if debug: print(distance)
 	return distance < threshold
 
 func is_waypoint_reached():
@@ -69,8 +68,6 @@ func _physics_process(_delta:float)-> void:
 	if self.is_navigation_finished():
 		return
 	
-	if debug:
-		print(has_waypoint_been_just_reached)
 	if has_waypoint_been_just_reached == false and is_waypoint_reached():
 		# Make sure we don't crash if we increment the index and run go_to_next_waypoint
 		if waypoint_index + 1 > _waypoints.size() -1:
