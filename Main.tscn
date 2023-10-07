@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=13 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
+[ext_resource type="Script" path="res://Level/EnemiesProgress.gd" id="1_ad18d"]
 [ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
@@ -29,6 +30,11 @@ fog_light_color = Color(0.854902, 0.384314, 0.345098, 1)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0962
 volumetric_fog_albedo = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i52lx"]
+dof_blur_far_distance = 16.11
+dof_blur_near_distance = 0.39
+dof_blur_amount = 0.02
 
 [node name="Main" type="Node"]
 
@@ -73,8 +79,12 @@ spot_angle = 19.13
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -4, 18, 2)
+attributes = SubResource("CameraAttributesPractical_i52lx")
 
 [node name="Level" type="Node3D" parent="."]
+
+[node name="EnemiesProgress" type="Node" parent="Level"]
+script = ExtResource("1_ad18d")
 
 [node name="BuildingBlocks" type="Node3D" parent="Level"]
 
