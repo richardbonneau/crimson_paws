@@ -4,7 +4,7 @@ extends Node3D
 @export var is_detection_visualizer_visible:bool = false :
 	set(value):
 		is_detection_visualizer_visible = value
-		$Detection/DetectionVisualizer.visible = value
+		$Shooting/Detection/DetectionVisualizer.visible = value
 
 @export var detection_radius: float = 5.0 :
 	set(value):
@@ -16,6 +16,6 @@ func _ready():
 
 func set_detection_radius(detection_radius):
 	# Adjust the collision shape
-	$Detection/DetectionArea.scale = Vector3(detection_radius, detection_radius, detection_radius)
+	$Shooting/Detection/DetectionArea.scale = Vector3(detection_radius, detection_radius, detection_radius)
 	# Adjust the visual representation
-	$Detection/DetectionVisualizer.scale = Vector3(detection_radius, 0.1, detection_radius)
+	$Shooting/Detection/DetectionVisualizer.scale = Vector3(detection_radius, 0.1, detection_radius)

@@ -30,6 +30,7 @@ mesh = SubResource("PrismMesh_fydtc")
 
 [node name="Shooting" type="Node3D" parent="."]
 script = ExtResource("3_rkmok")
+attack_speed = null
 
 [node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 

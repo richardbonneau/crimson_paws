@@ -18,8 +18,6 @@ var _waypoints = []
 var waypoint_index = 0
 var distance_to_next_waypoint:float = 0
 
-
-
 func _ready():
 	#	Get the corners array
 	start_node = get_tree().get_nodes_in_group("Start")[0]
@@ -64,7 +62,6 @@ func is_out_of_last_waypoint_range():
 	return is_target_in_range(last_waypoint, buffer_distance_once_waypoint_reached)
 
 func _physics_process(_delta:float)-> void:
-	print(movement_speed)
 	if self.is_navigation_finished():
 		return
 	
@@ -76,7 +73,6 @@ func _physics_process(_delta:float)-> void:
 		has_waypoint_been_just_reached = true
 		waypoint_index += 1
 		go_to_next_waypoint()
-		
 	
 	if has_waypoint_been_just_reached != false and is_out_of_last_waypoint_range():
 		has_waypoint_been_just_reached = false
