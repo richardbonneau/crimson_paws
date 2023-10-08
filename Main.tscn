@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl83ybd53y27d"]
-
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
+[ext_resource type="Script" path="res://Level/EnemiesProgress.gd" id="1_ad18d"]
 [ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
@@ -30,7 +29,10 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0962
 volumetric_fog_albedo = Color(0.537255, 0.537255, 0.537255, 1)
 
-[sub_resource type="Curve3D" id="Curve3D_qpqgo"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i52lx"]
+dof_blur_far_distance = 16.11
+dof_blur_near_distance = 0.39
+dof_blur_amount = 0.02
 
 [node name="Main" type="Node"]
 
@@ -74,13 +76,14 @@ spot_range = 78.793
 spot_attenuation = 0.0035205
 spot_angle = 19.13
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -4, 18, 2)
+attributes = SubResource("CameraAttributesPractical_i52lx")
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="MobPath" type="Path3D" parent="Level"]
-curve = SubResource("Curve3D_qpqgo")
+[node name="EnemiesProgress" type="Node" parent="Level"]
+script = ExtResource("1_ad18d")
 
 [node name="BuildingBlocks" type="Node3D" parent="Level"]
 
@@ -394,15 +397,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Towers" type="Node3D" parent="Level"]
 
 [node name="BasicTower" parent="Level/Towers" instance=ExtResource("3_osceu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -12)
-is_detection_visualizer_visible = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1, -12)
 detection_radius = 10.0
 
 [node name="Enemies" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="BasicEnemy" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+[node name="BasicEnemy1" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -4)
+collision_layer = 0
+collision_mask = 0
 
 [node name="BasicEnemy2" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -4)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BasicEnemy3" parent="Level/Enemies" instance=ExtResource("4_218k4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
+collision_layer = 0
+collision_mask = 0
+movement_speed = 6.0
+
+[node name="BasicEnemy4" parent="Level/Enemies" instance=ExtResource("4_218k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
+collision_layer = 0
+collision_mask = 0
+movement_speed = 8.0
