@@ -5,14 +5,8 @@ extends Area3D
 func _on_body_entered(body):
 	if body.is_in_group("Enemy"):
 		shooting_node.set_target_and_shoot(body)
-		pass
-		print("enter")
-		print(body)
-
-
 
 func _on_body_exited(body):
 	if body.is_in_group("Enemy"):
 		pass
-#		print("exit")
-#		print(body)
+
