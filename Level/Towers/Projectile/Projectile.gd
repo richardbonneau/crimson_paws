@@ -15,5 +15,5 @@ func seek_and_destroy_target(target: Node3D, new_damage:int):
 
 func _on_body_entered(body):
 	if body == _target:
-		body.take_damage(damage)
+		body.health.take_damage(damage)
 		self.queue_free()

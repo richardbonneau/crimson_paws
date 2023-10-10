@@ -1,27 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://xb4jui74wqqu"]
+[gd_scene load_steps=4 format=3 uid="uid://xb4jui74wqqu"]
 
 [ext_resource type="Script" path="res://Components/ProgressBar3D/ProgressBar3D.gd" id="1_8j2vh"]
+[ext_resource type="Texture2D" uid="uid://3ofdgmjwdyif" path="res://Components/ProgressBar3D/RawImports/barHorizontal_green.png" id="2_wpy7y"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1r1ep"]
-billboard_mode = 1
-billboard_keep_scale = true
+[sub_resource type="ViewportTexture" id="ViewportTexture_c7lf5"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="QuadMesh" id="QuadMesh_33f8k"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs17n"]
-albedo_color = Color(0, 0, 0, 1)
-billboard_mode = 1
-billboard_keep_scale = true
-
-[node name="ProgressBar3D" type="Node3D"]
+[node name="ProgressBar3D" type="Sprite3D"]
+billboard = 1
+texture = SubResource("ViewportTexture_c7lf5")
 script = ExtResource("1_8j2vh")
 
-[node name="Progress" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.100567, 0, 0, 0, 0.201133, 0, 0, 0, 1.00567, -1.44495, 0, 0.01)
-material_override = SubResource("StandardMaterial3D_1r1ep")
-mesh = SubResource("QuadMesh_33f8k")
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
 
-[node name="Background" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 0.2, 0, 0, 0, 1, 0.00441504, 1.19209e-07, -1.12057e-05)
-material_override = SubResource("StandardMaterial3D_hs17n")
-mesh = SubResource("QuadMesh_33f8k")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+value = 100.0
+texture_progress = ExtResource("2_wpy7y")

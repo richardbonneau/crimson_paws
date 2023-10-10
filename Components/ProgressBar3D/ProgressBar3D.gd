@@ -1,12 +1,9 @@
-extends Node3D
+extends Sprite3D
 
-# Also sets initial progress
-@export var current_progress:float = 1
+@onready var progress_bar:TextureProgressBar = $SubViewport/TextureProgressBar
 
-func _ready():
-	set_progress_bar(0.333333333333333333333)
+func set_max_value(max_value:float):
+	progress_bar.max_value = max_value
 
-func set_progress_bar(new_value:float):
-	var new_scale = new_value * 3
-	$Progress.scale.x = new_scale
-
+func set_value(value:float):
+	progress_bar.value = value
