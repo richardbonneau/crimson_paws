@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://0i21jaey6f7i"]
+[gd_scene load_steps=10 format=3 uid="uid://0i21jaey6f7i"]
 
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/BasicTower.gd" id="1_7y3s0"]
+[ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="2_rb70x"]
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/DetectionArea.gd" id="2_ucdw4"]
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/Shooting.gd" id="3_rkmok"]
 
@@ -22,6 +23,9 @@ albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
 
 [node name="BasicTower" type="Node3D"]
 script = ExtResource("1_7y3s0")
+
+[node name="ProgressBar3D" parent="." instance=ExtResource("2_rb70x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
 
 [node name="BasicMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
