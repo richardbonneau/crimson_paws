@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Level/EnemiesProgress.gd" id="1_ad18d"]
+[ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
 [ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
@@ -37,6 +38,7 @@ dof_blur_near_distance = 0.39
 dof_blur_amount = 0.02
 
 [node name="Main" type="Node"]
+script = ExtResource("1_tjax3")
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -420,7 +422,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Towers" type="Node3D" parent="Level"]
 
 [node name="BasicTower" parent="Level/Towers" instance=ExtResource("3_osceu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, -6)
 is_detection_visualizer_visible = true
 detection_radius = 12.0
 

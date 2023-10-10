@@ -20,6 +20,9 @@ func take_damage(incoming_damage:int):
 		death()
 
 func death():
+	# Remove the collisionshape so that it doesn't appear in the target lists of towers
+	scene_root.get_node("CollisionShape3D").queue_free()
+	
 	scene_root.get_node("serpent").visible = false
 	scene_root.get_node("DeathParticles").restart()
 	$DeathTimer.start()
