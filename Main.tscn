@@ -420,7 +420,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Towers" type="Node3D" parent="Level"]
 
 [node name="BasicTower" parent="Level/Towers" instance=ExtResource("3_osceu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -8)
 is_detection_visualizer_visible = true
 detection_radius = 12.0
 
