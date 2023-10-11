@@ -12,7 +12,6 @@ func _process(_delta:float):
 	pass
 
 func detect_corners():
-	print("detect corners")
 	var all_mob_ground_tiles = get_tree().get_nodes_in_group("MobGround")[0].get_children()
 	
 	for i in range(all_mob_ground_tiles.size()):

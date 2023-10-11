@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
+[ext_resource type="Script" path="res://Level/EnemiesProgress.gd" id="1_ad18d"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
 [ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
-[ext_resource type="PackedScene" uid="uid://co7hqdbhnpbj3" path="res://Managers/EnemiesProgress.tscn" id="2_nw5eb"]
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Towers/TowerCore/TowerCore.tscn" id="3_osceu"]
@@ -86,7 +86,8 @@ attributes = SubResource("CameraAttributesPractical_i52lx")
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="EnemiesProgress" parent="Level" instance=ExtResource("2_nw5eb")]
+[node name="EnemiesPositionsInMaze" type="Node" parent="Level" groups=["EnemiesPositionsInMaze"]]
+script = ExtResource("1_ad18d")
 
 [node name="BuildingBlocks" type="Node3D" parent="Level"]
 
@@ -428,4 +429,7 @@ detection_radius = 12.0
 [node name="Enemies" type="Node3D" parent="Level"]
 
 [node name="Snake" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -4)
+movement_speed = 5.0
+rotation_speed = 8.0
+debug = false

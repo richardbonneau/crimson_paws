@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfd5csahevltp"]
+
+[ext_resource type="Script" path="res://Towers/Projectile/Projectile.gd" id="1_yw14p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23t7e"]
+metallic = 1.0
+roughness = 0.33
+
+[sub_resource type="SphereMesh" id="SphereMesh_ppxur"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vlbhi"]
+
+[node name="Projectile" type="RigidBody3D"]
+collision_layer = 0
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_yw14p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_23t7e")
+mesh = SubResource("SphereMesh_ppxur")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_vlbhi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
