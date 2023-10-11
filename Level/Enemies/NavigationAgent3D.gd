@@ -4,7 +4,6 @@ extends NavigationAgent3D
 @onready var parent:CharacterBody3D = self.get_parent()
 @onready var waypointFinder:Node3D = parent.get_node("WaypointFinder")
 
-@onready var movement_speed: float = parent.movement_speed
 @onready var debug: bool = parent.debug
 
 var target_reached_offset_threshold:float = 1
@@ -82,11 +81,12 @@ func _physics_process(_delta:float)-> void:
 	
 	var new_velocity: Vector3 = next_path_position - current_agent_position
 	new_velocity = new_velocity.normalized()
-	new_velocity = new_velocity * movement_speed
+	new_velocity = new_velocity * parent.movement_speed
 	
 	parent.velocity = new_velocity
 	var look_target = Vector3(_waypoints[waypoint_index].global_transform.origin.x, parent.global_transform.origin.y, _waypoints[waypoint_index].global_transform.origin.z)
-	parent.look_at(look_target, Vector3.UP)
+	var target_rotation = parent.global_transform.looking_at(look_target, Vector3.UP).basis
+	parent.global_transform.basis = parent.global_transform.basis.slerp(target_rotation, parent.rotation_speed * _delta)
 	
 	parent.move_and_slide()
 
