@@ -2,14 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Enemies/EnemyCore/EnemyCore.tscn" id="1_68n28"]
 [ext_resource type="PackedScene" uid="uid://chb1wfph02cgm" path="res://Enemies/EnemyVariants/Snake/RawImports/Snake/Snake.glb" id="2_cxqke"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_n5e5w"]
-viewport_path = NodePath("SubViewport")
+[ext_resource type="Script" path="res://Enemies/EnemyVariants/Snake/RawImports/Snake/Visuals.gd" id="3_fpsag"]
 
 [node name="Snake" instance=ExtResource("1_68n28")]
 
-[node name="ProgressBar3D" parent="Health" index="1"]
-texture = SubResource("ViewportTexture_n5e5w")
-
-[node name="Snake" parent="." index="3" instance=ExtResource("2_cxqke")]
+[node name="Visuals" parent="." index="3" instance=ExtResource("2_cxqke")]
 transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0, -0.5, 0)
+script = ExtResource("3_fpsag")
+
+[editable path="Health/ProgressBar3D"]
