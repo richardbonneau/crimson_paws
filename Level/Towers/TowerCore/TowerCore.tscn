@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://0i21jaey6f7i"]
+
+[ext_resource type="Script" path="res://Level/Towers/TowerCore/TowerCore.gd" id="1_hlj18"]
+[ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="2_yqitm"]
+[ext_resource type="Script" path="res://Level/Towers/TowerCore/Shooting.gd" id="3_iog0w"]
+[ext_resource type="Script" path="res://Level/Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_inuqn"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uus48"]
+albedo_color = Color(0, 0, 0.431373, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fydtc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5c4"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u6lr"]
+
+[node name="TowerCore" type="Node3D"]
+script = ExtResource("1_hlj18")
+
+[node name="ProgressBar3D" parent="." instance=ExtResource("2_yqitm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
+texture = SubResource("ViewportTexture_inuqn")
+
+[node name="BasicMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_uus48")
+mesh = SubResource("PrismMesh_fydtc")
+
+[node name="Shooting" type="Node3D" parent="."]
+script = ExtResource("3_iog0w")
+
+[node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
+
+[node name="Detection" type="Node3D" parent="Shooting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="DetectionArea" type="Area3D" parent="Shooting/Detection"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0251899, 0.00919819, 0.0138192)
+script = ExtResource("4_2w3pg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shooting/Detection/DetectionArea"]
+shape = SubResource("CapsuleShape3D_cdx4r")
+
+[node name="DetectionVisualizer" type="MeshInstance3D" parent="Shooting/Detection"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_5k5c4")
+mesh = SubResource("CapsuleMesh_5u6lr")
+
+[connection signal="timeout" from="Shooting/ShootCooldownTimer" to="Shooting" method="_on_ShootCooldownTimer_timeout"]
+[connection signal="body_entered" from="Shooting/Detection/DetectionArea" to="Shooting/Detection/DetectionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Shooting/Detection/DetectionArea" to="Shooting/Detection/DetectionArea" method="_on_body_exited"]
