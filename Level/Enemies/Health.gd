@@ -24,7 +24,7 @@ func death():
 	scene_root.get_node("CollisionShape3D").queue_free()
 	
 	scene_root.get_node("serpent").visible = false
-	scene_root.get_node("DeathParticles").restart()
+	$DeathParticles.restart()
 	$DeathTimer.start()
 
 func _on_death_timer_timeout():

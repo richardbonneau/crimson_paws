@@ -85,6 +85,8 @@ func _physics_process(_delta:float)-> void:
 	new_velocity = new_velocity * movement_speed
 	
 	parent.velocity = new_velocity
-	parent.look_at(_waypoints[waypoint_index].global_transform.origin)
+	var look_target = Vector3(_waypoints[waypoint_index].global_transform.origin.x, parent.global_transform.origin.y, _waypoints[waypoint_index].global_transform.origin.z)
+	parent.look_at(look_target, Vector3.UP)
+	
 	parent.move_and_slide()
 

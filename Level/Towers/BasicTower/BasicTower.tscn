@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/DetectionArea.gd" id="2_ucdw4"]
 [ext_resource type="Script" path="res://Level/Towers/BasicTower/Shooting.gd" id="3_rkmok"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yd7v5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hn7iv"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uus48"]
@@ -29,7 +29,7 @@ script = ExtResource("1_7y3s0")
 
 [node name="ProgressBar3D" parent="." instance=ExtResource("2_rb70x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
-texture = SubResource("ViewportTexture_yd7v5")
+texture = SubResource("ViewportTexture_hn7iv")
 
 [node name="BasicMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
