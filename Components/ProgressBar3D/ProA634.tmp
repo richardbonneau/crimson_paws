@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Components/ProgressBar3D/ProgressBar3D.gd" id="1_8j2vh"]
 [ext_resource type="Texture2D" uid="uid://3ofdgmjwdyif" path="res://Components/ProgressBar3D/RawImports/barHorizontal_green.png" id="2_wpy7y"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mpatu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qpox5"]
 viewport_path = NodePath("SubViewport")
 
 [node name="ProgressBar3D" type="Sprite3D"]
 billboard = 1
-texture = SubResource("ViewportTexture_mpatu")
+texture = SubResource("ViewportTexture_qpox5")
 script = ExtResource("1_8j2vh")
 
 [node name="SubViewport" type="SubViewport" parent="."]

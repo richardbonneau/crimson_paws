@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://filtursrou60"]
+
+[ext_resource type="Script" path="res://Enemies/EnemyCore/EnemyCore.gd" id="1_8kaq0"]
+[ext_resource type="Script" path="res://Enemies/EnemyCore/Health.gd" id="2_6j1f0"]
+[ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="3_m00dq"]
+[ext_resource type="Material" uid="uid://cl0d2no6865ad" path="res://Enemies/EnemyCore/Particles/DyingEnemy.tres" id="4_1klg6"]
+[ext_resource type="Script" path="res://Enemies/EnemyCore/Navigation.gd" id="5_5j80d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5i3t"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w6i64"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lns22"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 5, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+tangential_accel_min = 55.67
+tangential_accel_max = 55.67
+
+[sub_resource type="QuadMesh" id="QuadMesh_c2cw6"]
+material = ExtResource("4_1klg6")
+
+[node name="EnemyCore" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 0
+script = ExtResource("1_8kaq0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_p5i3t")
+
+[node name="Health" type="Node3D" parent="."]
+script = ExtResource("2_6j1f0")
+
+[node name="DeathTimer" type="Timer" parent="Health"]
+
+[node name="ProgressBar3D" parent="Health" instance=ExtResource("3_m00dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842328, 0)
+texture = SubResource("ViewportTexture_w6i64")
+
+[node name="DeathParticles" type="GPUParticles3D" parent="Health"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_lns22")
+draw_pass_1 = SubResource("QuadMesh_c2cw6")
+
+[node name="Navigation" type="Node3D" parent="."]
+script = ExtResource("5_5j80d")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Navigation"]
+path_max_distance = 14.61
+path_postprocessing = 1
+
+[node name="WaypointFinder" type="Node3D" parent="Navigation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[connection signal="timeout" from="Health/DeathTimer" to="Health" method="_on_death_timer_timeout"]
