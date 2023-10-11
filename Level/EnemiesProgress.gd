@@ -19,8 +19,8 @@ func _physics_process(_delta: float) -> void:
 	enemies_sorted_by_placement_in_maze = all_enemies
 
 func sort_enemies_by_placement_in_maze(a:EnemyCore,b:EnemyCore):
-	var a_enemy_nav : EnemyNav = a.get_node("NavigationAgent3D")
-	var b_enemy_nav : EnemyNav = b.get_node("NavigationAgent3D")
+	var a_enemy_nav : EnemyNav = a.navigation
+	var b_enemy_nav : EnemyNav = b.navigation
 	
 	if a_enemy_nav.waypoint_index > b_enemy_nav.waypoint_index:
 		return true

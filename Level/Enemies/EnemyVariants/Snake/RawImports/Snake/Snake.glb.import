@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chb1wfph02cgm"
-path="res://.godot/imported/serpent.glb-9ab8679e081539ad6b3dfb11224fbbf9.scn"
+path="res://.godot/imported/Snake.glb-925894cc78b6905c1737234efd1bea6e.scn"
 
 [deps]
 
-source_file="res://Level/Enemies/RawImports/Snake/serpent.glb"
-dest_files=["res://.godot/imported/serpent.glb-9ab8679e081539ad6b3dfb11224fbbf9.scn"]
+source_file="res://Level/Enemies/EnemyVariants/Snake/RawImports/Snake/Snake.glb"
+dest_files=["res://.godot/imported/Snake.glb-925894cc78b6905c1737234efd1bea6e.scn"]
 
 [params]
 

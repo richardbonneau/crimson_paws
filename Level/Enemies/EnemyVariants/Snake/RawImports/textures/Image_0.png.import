@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm2m6ou4vvcds"
-path="res://.godot/imported/Image_0.png-01b975194339664040562a2398af3525.ctex"
+path="res://.godot/imported/Image_0.png-710cf1803e8350cb6c6155e2568c0a3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Enemies/RawImports/textures/Image_0.png"
-dest_files=["res://.godot/imported/Image_0.png-01b975194339664040562a2398af3525.ctex"]
+source_file="res://Level/Enemies/EnemyVariants/Snake/RawImports/textures/Image_0.png"
+dest_files=["res://.godot/imported/Image_0.png-710cf1803e8350cb6c6155e2568c0a3e.ctex"]
 
 [params]
 

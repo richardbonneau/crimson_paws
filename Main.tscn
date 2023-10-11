@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Level/Towers/TowerCore/TowerCore.tscn" id="3_osceu"]
-[ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Level/Enemies/EnemyCore/EnemyCore.tscn" id="4_218k4"]
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
+[ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Level/Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)
@@ -428,8 +428,5 @@ detection_radius = 12.0
 
 [node name="Enemies" type="Node3D" parent="Level"]
 
-[node name="EnemyCore" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -4)
-
-[node name="EnemyCore2" parent="Level/Enemies" instance=ExtResource("4_218k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -4)
+[node name="Snake" parent="Level/Enemies" instance=ExtResource("9_o233r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -4)

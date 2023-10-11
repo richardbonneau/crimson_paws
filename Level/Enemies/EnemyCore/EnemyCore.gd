@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var debug:bool = false
 
 @onready var health:Node3D = $Health
+@onready var navigation:Node3D = $Navigation
 
 
 

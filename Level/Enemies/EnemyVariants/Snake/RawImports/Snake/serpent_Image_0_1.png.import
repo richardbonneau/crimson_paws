@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di7tk1576aeo0"
-path.s3tc="res://.godot/imported/serpent_Image_0_1.png-a5e704974b25d24b012b7c8e4deb29b6.s3tc.ctex"
+path.s3tc="res://.godot/imported/serpent_Image_0_1.png-2b08ebdd75c3ca7cf289fcc665175d2a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Level/Enemies/RawImports/Snake/serpent_Image_0_1.png"
-dest_files=["res://.godot/imported/serpent_Image_0_1.png-a5e704974b25d24b012b7c8e4deb29b6.s3tc.ctex"]
+source_file="res://Level/Enemies/EnemyVariants/Snake/RawImports/Snake/serpent_Image_0_1.png"
+dest_files=["res://.godot/imported/serpent_Image_0_1.png-2b08ebdd75c3ca7cf289fcc665175d2a.s3tc.ctex"]
 
 [params]
 
