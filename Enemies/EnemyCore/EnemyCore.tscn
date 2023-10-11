@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://filtursrou60"]
+[gd_scene load_steps=11 format=3 uid="uid://filtursrou60"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyCore/EnemyCore.gd" id="1_8kaq0"]
 [ext_resource type="Script" path="res://Enemies/EnemyCore/Health.gd" id="2_6j1f0"]
-[ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="3_m00dq"]
+[ext_resource type="Script" path="res://Components/ProgressBar3D/ProgressBar3D.gd" id="3_tla0y"]
 [ext_resource type="Material" uid="uid://cl0d2no6865ad" path="res://Enemies/EnemyCore/Particles/DyingEnemy.tres" id="4_1klg6"]
+[ext_resource type="Texture2D" uid="uid://3ofdgmjwdyif" path="res://Components/ProgressBar3D/RawImports/barHorizontal_green.png" id="4_h1ff7"]
 [ext_resource type="Script" path="res://Enemies/EnemyCore/Navigation.gd" id="5_5j80d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5i3t"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jdcpp"]
+viewport_path = NodePath("Health/HealthBar/SubViewport")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lns22"]
 emission_shape = 1
@@ -36,8 +40,31 @@ script = ExtResource("2_6j1f0")
 
 [node name="DeathTimer" type="Timer" parent="Health"]
 
-[node name="ProgressBar3D" parent="Health" instance=ExtResource("3_m00dq")]
+[node name="HealthBar" type="Sprite3D" parent="Health"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842328, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_jdcpp")
+script = ExtResource("3_tla0y")
+
+[node name="SubViewport" type="SubViewport" parent="Health/HealthBar"]
+disable_3d = true
+transparent_bg = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Health/HealthBar/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+value = 100.0
+texture_progress = ExtResource("4_h1ff7")
 
 [node name="DeathParticles" type="GPUParticles3D" parent="Health"]
 emitting = false
@@ -58,5 +85,3 @@ path_postprocessing = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [connection signal="timeout" from="Health/DeathTimer" to="Health" method="_on_death_timer_timeout"]
-
-[editable path="Health/ProgressBar3D"]

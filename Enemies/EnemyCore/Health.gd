@@ -3,7 +3,7 @@ extends Node
 signal death_signal
 
 @onready var scene_root:CharacterBody3D = get_parent()
-@onready var health_bar:Sprite3D = $ProgressBar3D
+@onready var health_bar:Sprite3D = $HealthBar
 
 var max_health:int = 5
 var current_health:int = max_health
