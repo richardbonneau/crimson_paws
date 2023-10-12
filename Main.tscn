@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Towers/TowerCore/TowerCore.tscn" id="3_osceu"]
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
 [ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
-[ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/player.tscn" id="10_57nnn"]
+[ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/Player.tscn" id="10_57nnn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)
@@ -32,11 +32,6 @@ fog_light_color = Color(0.854902, 0.384314, 0.345098, 1)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0962
 volumetric_fog_albedo = Color(0.537255, 0.537255, 0.537255, 1)
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i52lx"]
-dof_blur_far_distance = 16.11
-dof_blur_near_distance = 0.39
-dof_blur_amount = 0.02
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tjax3")
@@ -80,11 +75,6 @@ shadow_enabled = true
 spot_range = 78.793
 spot_attenuation = 0.0035205
 spot_angle = 19.13
-
-[node name="Camera3D" type="Camera3D" parent="." groups=["Camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -12, 14, -1)
-visible = false
-attributes = SubResource("CameraAttributesPractical_i52lx")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -444,4 +434,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -4)
 
 [node name="Player" parent="." instance=ExtResource("10_57nnn")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3, 1, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
