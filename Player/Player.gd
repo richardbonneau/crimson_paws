@@ -1,10 +1,20 @@
 extends CharacterBody3D
 
 @export var movement_speed: float = 5.0
+@export var zoom_speed: float = 1.0
+@export var max_zoom_deg:float = -60
+@export var min_zoom_deg: float = -40
+
 var target_position: Vector3 = Vector3.ZERO
 var moving: bool = false
 
+@onready var camera:ThirdPersonCamera = $ThirdPersonCamera
+
 func _input(event: InputEvent) -> void:
+	player_movement(event)
+	camera_zoom(event)
+
+func player_movement(event: InputEvent) ->void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var camera: Camera3D = get_viewport().get_camera_3d()
 		var ray_origin: Vector3= camera.project_ray_origin(event.position)
@@ -20,6 +30,17 @@ func _input(event: InputEvent) -> void:
 			target_position = result.position
 			print(target_position)
 			moving = true
+
+func camera_zoom(event:InputEvent):
+	if event is InputEventMouseButton:
+		var new_dive_angle:float = camera.initial_dive_angle_deg
+		if event.is_action_pressed("zoom_in"):
+			new_dive_angle += zoom_speed
+		elif event.is_action_pressed("zoom_out"):
+			new_dive_angle -= zoom_speed
+		
+		if new_dive_angle < min_zoom_deg and new_dive_angle > max_zoom_deg:
+			camera.initial_dive_angle_deg = new_dive_angle
 
 func _physics_process(delta: float) -> void:
 	if moving:
