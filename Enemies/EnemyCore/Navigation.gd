@@ -61,7 +61,7 @@ func is_out_of_last_waypoint_range():
 	var last_waypoint = _waypoints[waypoint_index - 1]
 	return is_target_in_range(last_waypoint, buffer_distance_once_waypoint_reached)
 
-func _physics_process(_delta:float)-> void:
+func _physics_process(delta:float)-> void:
 	if navigation_agent_3d.is_navigation_finished():
 		return
 	
@@ -87,7 +87,7 @@ func _physics_process(_delta:float)-> void:
 	parent.velocity = new_velocity
 	var look_target = Vector3(_waypoints[waypoint_index].global_transform.origin.x, parent.global_transform.origin.y, _waypoints[waypoint_index].global_transform.origin.z)
 	var target_rotation = parent.global_transform.looking_at(look_target, Vector3.UP).basis
-	parent.global_transform.basis = parent.global_transform.basis.slerp(target_rotation, parent.rotation_speed * _delta)
+	parent.global_transform.basis = parent.global_transform.basis.slerp(target_rotation, parent.rotation_speed * delta)
 	
 	parent.move_and_slide()
 

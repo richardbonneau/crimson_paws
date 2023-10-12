@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://nfjm7kkpowr0"]
+[gd_scene load_steps=8 format=3 uid="uid://nfjm7kkpowr0"]
 
 [ext_resource type="Texture2D" uid="uid://exs2mt5xnr60" path="res://Level/BuildingBlocks/RawImports/fancy_black_flipped_tiles fancy black.png" id="1_sd52b"]
 [ext_resource type="PackedScene" uid="uid://45noid7xnd8b" path="res://Level/BuildingBlocks/Tiles/black_envy_tile.tscn" id="1_ysabe"]
@@ -8,6 +8,12 @@
 albedo_texture = ExtResource("1_sd52b")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_86lu2"]
+vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dklvw"]
 
 [node name="TowerGround" type="Node3D"]
 
@@ -21,3 +27,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
 visible = false
 
 [node name="PlayerWalkable" parent="." instance=ExtResource("3_dujd5")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_86lu2")
+navigation_layers = 16
+
+[node name="NavMesh" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 1, 0)
+visible = false
+mesh = SubResource("PlaneMesh_dklvw")

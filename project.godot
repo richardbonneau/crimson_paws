@@ -86,8 +86,17 @@ zoom_in={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(90, 10),"global_position":Vector2(94, 53),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
-zoom_out={
+scroll_down={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(131, 17),"global_position":Vector2(135, 60),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_render/layer_1="Mob"
+3d_render/layer_5="Player"
+3d_physics/layer_1="Mob"
+3d_navigation/layer_1="MobNav"
+3d_physics/layer_5="Player"
+3d_navigation/layer_5="PlayerNav"

@@ -87,6 +87,8 @@ spot_angle = 19.13
 [node name="TowerGround2" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
+[node name="TowerGround11" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
+
 [node name="TowerGround3" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
@@ -159,15 +161,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
 [node name="TowerGround65" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 
-[node name="TowerGround66" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
-
-[node name="TowerGround67" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
-
-[node name="TowerGround68" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10)
-
 [node name="TowerGround69" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
@@ -200,9 +193,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
 
 [node name="TowerGround73" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -12)
-
-[node name="TowerGround74" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
 
 [node name="TowerGround75" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
@@ -390,6 +380,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
 
 [node name="UnwalkableGround33" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="UnwalkableGround38" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
+
+[node name="UnwalkableGround39" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10)
+
+[node name="UnwalkableGround40" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
+
+[node name="UnwalkableGround41" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
 
 [node name="UnwalkableGround34" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
