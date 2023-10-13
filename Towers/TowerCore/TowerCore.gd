@@ -1,6 +1,11 @@
 @tool
 extends Node3D
 
+var is_building_blueprint:bool = false :
+	set(value):
+		is_building_blueprint = value
+		$BuildingBlueprint.building_mode()
+
 @export var is_detection_visualizer_visible:bool = false :
 	set(value):
 		is_detection_visualizer_visible = value
