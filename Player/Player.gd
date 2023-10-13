@@ -11,6 +11,8 @@ extends CharacterBody3D
 var target_position: Vector3 = Vector3.ZERO
 var moving: bool = false
 
+var is_in_build_mode = false
+
 @onready var third_person_camera:ThirdPersonCamera = $ThirdPersonCamera
 @onready var navigation_agent:NavigationAgent3D = $NavigationAgent3D
 

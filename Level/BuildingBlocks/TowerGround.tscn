@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://exs2mt5xnr60" path="res://Level/BuildingBlocks/RawImports/fancy_black_flipped_tiles fancy black.png" id="1_sd52b"]
 [ext_resource type="PackedScene" uid="uid://45noid7xnd8b" path="res://Level/BuildingBlocks/Tiles/black_envy_tile.tscn" id="1_ysabe"]
-[ext_resource type="PackedScene" uid="uid://dov87uxwf2eop" path="res://Level/BuildingBlocks/PlayerWalkable/PlayerWalkable.tscn" id="3_dujd5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noyrx"]
 albedo_texture = ExtResource("1_sd52b")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sf5m3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_86lu2"]
 vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
@@ -26,7 +27,13 @@ mesh = SubResource("BoxMesh_n2lsi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
 visible = false
 
-[node name="PlayerWalkable" parent="." instance=ExtResource("3_dujd5")]
+[node name="TowerGroundCollider" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerGroundCollider"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_sf5m3")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_86lu2")

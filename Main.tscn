@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
 [ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 [ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/Player.tscn" id="10_57nnn"]
+[ext_resource type="Script" path="res://UI/temp_build_mode_ui.gd" id="11_6682h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)
@@ -412,7 +413,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 
 [node name="Start" parent="Level/BuildingBlocks/Zones" instance=ExtResource("5_0j6or")]
 
-[node name="Towers" type="Node3D" parent="Level"]
+[node name="Towers" type="Node3D" parent="Level" groups=["TowersContainer"]]
 
 [node name="TowerCore" parent="Level/Towers" instance=ExtResource("3_osceu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -6)
@@ -467,3 +468,6 @@ offset_right = 73.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Place Basic Tower"
+script = ExtResource("11_6682h")
+
+[connection signal="pressed" from="UI/BuildingMenu/Button" to="UI/BuildingMenu/Button" method="_on_pressed"]

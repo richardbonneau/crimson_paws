@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://lgv7av81h7ac"]
+[gd_scene load_steps=7 format=3 uid="uid://lgv7av81h7ac"]
 
 [ext_resource type="PackedScene" uid="uid://d3frg2jqv7v07" path="res://Level/BuildingBlocks/Tiles/wood_floor_envy_tile.tscn" id="1_vd1nl"]
 [ext_resource type="Texture2D" uid="uid://dd06d7frk0srs" path="res://Level/BuildingBlocks/RawImports/Tiles wood floor_WoodFloor048_1K-PNG_Color.png" id="2_wjycf"]
-[ext_resource type="PackedScene" uid="uid://dov87uxwf2eop" path="res://Level/BuildingBlocks/PlayerWalkable/PlayerWalkable.tscn" id="3_jx3ri"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4cfa"]
 albedo_texture = ExtResource("2_wjycf")
@@ -25,8 +24,6 @@ visible = false
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_h4cfa")
 mesh = SubResource("BoxMesh_n2lsi")
-
-[node name="PlayerWalkable" parent="." instance=ExtResource("3_jx3ri")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_thu6t")

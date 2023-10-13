@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg4geq78kba0l"]
+[gd_scene load_steps=7 format=3 uid="uid://bg4geq78kba0l"]
 
 [ext_resource type="PackedScene" uid="uid://b33d0vf5ib4iw" path="res://Level/BuildingBlocks/Tiles/red_carpet_envy_tile.tscn" id="1_67mq4"]
 [ext_resource type="Texture2D" uid="uid://der5j8box1717" path="res://Level/BuildingBlocks/RawImports/tiles red carpet_Red carpet.png" id="2_7inrr"]
-[ext_resource type="PackedScene" uid="uid://dov87uxwf2eop" path="res://Level/BuildingBlocks/PlayerWalkable/PlayerWalkable.tscn" id="3_3x7w4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhdgd"]
 vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
@@ -35,8 +34,6 @@ visible = false
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_h4cfa")
 mesh = SubResource("BoxMesh_n2lsi")
-
-[node name="PlayerWalkable" parent="." instance=ExtResource("3_3x7w4")]
 
 [node name="Waypoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

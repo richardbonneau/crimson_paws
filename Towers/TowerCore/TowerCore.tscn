@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
 [ext_resource type="Script" path="res://Towers/TowerCore/BuildingBlueprint.gd" id="5_0jwxp"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_abwbn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1uixd"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mefuf"]
@@ -35,7 +35,7 @@ script = ExtResource("1_hlj18")
 
 [node name="ProgressBar3D" parent="." instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
-texture = SubResource("ViewportTexture_abwbn")
+texture = SubResource("ViewportTexture_1uixd")
 
 [node name="BasicMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
