@@ -30,7 +30,7 @@ visible = false
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_86lu2")
-navigation_layers = 16
+navigation_layers = 17
 
 [node name="NavMesh" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 1, 0)
