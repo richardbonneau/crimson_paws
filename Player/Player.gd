@@ -25,15 +25,7 @@ func _input(event: InputEvent) -> void:
 
 func player_movement(event: InputEvent) ->void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		var camera: Camera3D = get_viewport().get_camera_3d()
-		var ray_origin: Vector3 = camera.project_ray_origin(event.position)
-		var ray_end: Vector3 = ray_origin + camera.project_ray_normal(event.position) * 1000.0
-		
-		var space_state:PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
-		var ray_params:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-		ray_params.from = ray_origin
-		ray_params.to = ray_end
-		var result = space_state.intersect_ray(ray_params)
+		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position)
 		
 		if result:
 			target_position = result.position

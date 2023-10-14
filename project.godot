@@ -15,6 +15,10 @@ run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CustomFunctions="*res://Utils/Singletons/CustomFunctions.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ThirdPersonTemplate/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")

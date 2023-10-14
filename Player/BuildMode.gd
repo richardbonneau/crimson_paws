@@ -24,7 +24,7 @@ func build_tower(event):
 
 func place_building_blueprint(event):
 	if parent.is_in_build_mode and event is InputEventMouseMotion:
-		var result:Dictionary = create_ray_and_register_hit(event)
+		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position)
 		# If the ray hits a towerground collider, instantiate a tower preview
 		if result and "collider" in result and result["collider"].name == "TowerGroundCollider":
 			var build_pos:Vector3 = result["collider"].global_transform.origin
@@ -38,14 +38,3 @@ func place_building_blueprint(event):
 	else:
 		turret_build_preview.visible = false
 
-func create_ray_and_register_hit(event:InputEvent):
-	var camera: Camera3D = get_viewport().get_camera_3d()
-	var ray_origin: Vector3 = camera.project_ray_origin(event.position)
-	var ray_end: Vector3 = ray_origin + camera.project_ray_normal(event.position) * 1000.0
-	var space_state:PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
-	var ray_params:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-	ray_params.from = ray_origin
-	ray_params.to = ray_end
-	var result:Dictionary = space_state.intersect_ray(ray_params)
-	
-	return result
