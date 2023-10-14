@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 	all_enemies.sort_custom(sort_enemies_by_placement_in_maze)
 	enemies_sorted_by_placement_in_maze = all_enemies
 
-func sort_enemies_by_placement_in_maze(a:EnemyCore,b:EnemyCore):
+func sort_enemies_by_placement_in_maze(a:EnemyCore,b:EnemyCore) -> bool:
 	var a_enemy_nav  = a.navigation
 	var b_enemy_nav  = b.navigation
 	

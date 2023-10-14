@@ -1,6 +1,6 @@
 extends Node
 
-func create_ray_and_register_hit(click_position:Vector2):
+func create_ray_and_register_hit(click_position:Vector2) -> Dictionary:
 	var camera: Camera3D = get_viewport().get_camera_3d()
 	var ray_origin: Vector3 = camera.project_ray_origin(click_position)
 	var ray_end: Vector3 = ray_origin + camera.project_ray_normal(click_position) * 1000.0
@@ -11,3 +11,8 @@ func create_ray_and_register_hit(click_position:Vector2):
 	var result:Dictionary = space_state.intersect_ray(ray_params)
 	
 	return result
+
+func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: Node3D, parent_of_new_node3d: Node3D) -> Node3D:
+	new_node3d.global_transform.origin = new_node3d_position
+	parent_of_new_node3d.add_child(new_node3d)
+	return new_node3d
