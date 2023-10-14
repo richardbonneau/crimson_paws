@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
 [ext_resource type="Script" path="res://Towers/TowerCore/BuildingBlueprint.gd" id="5_0jwxp"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1uixd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_doo04"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mefuf"]
@@ -32,10 +32,11 @@ albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
 
 [node name="TowerCore" type="Node3D"]
 script = ExtResource("1_hlj18")
+is_detection_visualizer_visible = true
 
 [node name="ProgressBar3D" parent="." instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
-texture = SubResource("ViewportTexture_1uixd")
+texture = SubResource("ViewportTexture_doo04")
 
 [node name="BasicMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
@@ -59,7 +60,6 @@ shape = SubResource("CapsuleShape3D_cdx4r")
 
 [node name="DetectionVisualizer" type="MeshInstance3D" parent="Shooting/Detection"]
 transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_5k5c4")
 mesh = SubResource("CapsuleMesh_5u6lr")
 
