@@ -28,8 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
 visible = false
 
 [node name="TowerGroundCollider" type="StaticBody3D" parent="."]
-collision_layer = 16
-collision_mask = 16
+collision_layer = 4112
+collision_mask = 4112
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TowerGroundCollider"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

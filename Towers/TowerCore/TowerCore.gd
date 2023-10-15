@@ -9,7 +9,8 @@ var is_building_blueprint:bool = false :
 @export var is_detection_visualizer_visible:bool = false :
 	set(value):
 		is_detection_visualizer_visible = value
-#		$Shooting/Detection/DetectionVisualizer.visible = value
+		print(get_children())
+		$Shooting/Detection/DetectionVisualizer.visible = value
 
 @export var detection_radius: float = 5.0 :
 	set(value):

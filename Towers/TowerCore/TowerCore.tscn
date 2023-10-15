@@ -1,21 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://0i21jaey6f7i"]
+[gd_scene load_steps=11 format=3 uid="uid://0i21jaey6f7i"]
 
 [ext_resource type="Script" path="res://Towers/TowerCore/TowerCore.gd" id="1_hlj18"]
 [ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="2_yqitm"]
 [ext_resource type="Script" path="res://Towers/TowerCore/Shooting.gd" id="3_iog0w"]
-[ext_resource type="Script" path="res://Towers/TowerCore/temp_basic_mesh.gd" id="3_y5qcr"]
 [ext_resource type="Script" path="res://Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
 [ext_resource type="Script" path="res://Towers/TowerCore/BuildingBlueprint.gd" id="5_0jwxp"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_c2m6a"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hxj1b"]
 viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mefuf"]
-transparency = 1
-albedo_color = Color(0.109804, 0.345098, 1, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_fydtc"]
-material = SubResource("StandardMaterial3D_mefuf")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
 
@@ -36,12 +28,7 @@ is_detection_visualizer_visible = true
 
 [node name="ProgressBar3D" parent="." instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46989, 0)
-texture = SubResource("ViewportTexture_c2m6a")
-
-[node name="BasicMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("PrismMesh_fydtc")
-script = ExtResource("3_y5qcr")
+texture = SubResource("ViewportTexture_hxj1b")
 
 [node name="Shooting" type="Node3D" parent="."]
 script = ExtResource("3_iog0w")

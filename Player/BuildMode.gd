@@ -4,7 +4,7 @@ extends Node3D
 @onready var turret_build_preview_container:Node3D = $TurretBuildPreview
 
 # TODO: use global list of turrets packedscenes
-var basic_tower_scene:PackedScene = preload("res://Towers/TowerCore/TowerCore.tscn")
+var arrow_tower_scene:PackedScene = preload("res://Towers/TowerVariants/ArrowTurret.tscn")
 
 var build_location:Vector3
 var tower_to_build:Node3D
@@ -26,7 +26,7 @@ func build_tower(event) -> void:
 
 func check_if_valid_building_emplacement(event) -> void:
 	if parent.is_in_build_mode and event is InputEventMouseMotion:
-		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position)
+		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position, 13)
 		# If the ray hits a towerground collider, instantiate a tower preview
 		# TODO: I think the raycasts hits collider parts of the instantiated tower. I might need to turn them off when instantiating a preview
 		print(result)
@@ -48,6 +48,7 @@ func check_if_valid_building_emplacement(event) -> void:
 
 func display_tower_preview(result: Dictionary) -> void:
 	var build_pos:Vector3 = result["collider"].global_transform.origin
+	# TODO: Turrets height are a bit fucky. The Towers Container in main is hovering above the rest but that wouldnt take into account a level with different heights
 	build_pos.y += 1
 	
 	if build_pos != build_location:
@@ -64,7 +65,7 @@ func instantiate_tower_to_build(build_pos: Vector3) -> Node3D:
 		var existing_preview_turret:Node3D = turret_build_preview_container.get_child(0)
 		existing_preview_turret.queue_free()
 	
-	var new_tower_to_build:Node3D = CustomFunctions.instantiate_and_append_to_node3d(build_pos, basic_tower_scene, turret_build_preview_container)
+	var new_tower_to_build:Node3D = CustomFunctions.instantiate_and_append_to_node3d(build_pos, arrow_tower_scene, turret_build_preview_container)
 	print(build_pos)
 	print(new_tower_to_build.global_transform.origin)
 	print("---")

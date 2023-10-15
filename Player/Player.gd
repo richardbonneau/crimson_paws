@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 
 func player_movement(event: InputEvent) ->void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position)
+		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position, 5)
 		
 		if result:
 			target_position = result.position
