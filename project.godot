@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 CustomFunctions="*res://Utils/Singletons/CustomFunctions.gd"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/rlegi/godot/crimson_paws_movies/crimson_paws_movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ThirdPersonTemplate/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")

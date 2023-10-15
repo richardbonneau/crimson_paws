@@ -12,7 +12,10 @@ func create_ray_and_register_hit(click_position:Vector2) -> Dictionary:
 	
 	return result
 
-func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: Node3D, parent_of_new_node3d: Node3D) -> Node3D:
-	new_node3d.global_transform.origin = new_node3d_position
-	parent_of_new_node3d.add_child(new_node3d)
-	return new_node3d
+func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: PackedScene, parent_of_new_node3d: Node3D) -> Node3D:
+	var new_node3d_instance:Node3D = new_node3d.instantiate()
+	parent_of_new_node3d.add_child(new_node3d_instance)
+	new_node3d_instance.global_transform.origin = new_node3d_position
+	print("new_node3d_position ", new_node3d_position,new_node3d_instance.global_transform.origin)
+#	print("new_node3d_instance.global_transform.origin")
+	return new_node3d_instance
