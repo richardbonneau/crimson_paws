@@ -12,8 +12,8 @@ func create_ray_and_register_hit(click_position:Vector2, collision_layer: int = 
 #	if collision_layer != -1:
 #		print("setting col layer", collision_layer)
 #		ray_params.set_collision_mask(collision_layer)
-#
-	print(ray_params)
+	
+	print("ray_params",ray_params)
 	var result:Dictionary = space_state.intersect_ray(ray_params)
 	print(result)
 	print("---")
@@ -23,6 +23,4 @@ func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: P
 	var new_node3d_instance:Node3D = new_node3d.instantiate()
 	parent_of_new_node3d.add_child(new_node3d_instance)
 	new_node3d_instance.global_transform.origin = new_node3d_position
-	print("new_node3d_position ", new_node3d_position,new_node3d_instance.global_transform.origin)
-#	print("new_node3d_instance.global_transform.origin")
 	return new_node3d_instance
