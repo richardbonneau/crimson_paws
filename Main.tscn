@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
-[ext_resource type="PackedScene" uid="uid://df71bs5xjijf0" path="res://Towers/TowerVariants/ArrowTurret/ArrowTurret.tscn" id="8_ir4ho"]
 [ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 [ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/Player.tscn" id="10_57nnn"]
 [ext_resource type="Script" path="res://UI/temp_build_mode_ui.gd" id="11_6682h"]
@@ -414,11 +413,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Start" parent="Level/BuildingBlocks/Zones" instance=ExtResource("5_0j6or")]
 
 [node name="Towers" type="Node3D" parent="Level" groups=["TowersContainer"]]
-
-[node name="ArrowTurret" parent="Level/Towers" instance=ExtResource("8_ir4ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -6)
-is_detection_visualizer_visible = false
-detection_radius = 10.0
 
 [node name="Enemies" type="Node3D" parent="Level"]
 

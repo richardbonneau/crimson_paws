@@ -7,10 +7,13 @@
 viewport_path = NodePath("SubViewport")
 
 [node name="ArrowTurret" instance=ExtResource("1_gelfg")]
-is_detection_visualizer_visible = false
+detection_radius = 10.0
+
+[node name="DetectionArea" parent="Shooting/Detection" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0251899, 0.00919819, 0.0138192)
 
 [node name="DetectionVisualizer" parent="Shooting/Detection" index="1"]
-visible = false
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="ShootCooldown" parent="Shooting" index="1"]
 texture = SubResource("ViewportTexture_1d5n7")
