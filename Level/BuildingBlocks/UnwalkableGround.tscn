@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://lgv7av81h7ac"]
+[gd_scene load_steps=8 format=3 uid="uid://lgv7av81h7ac"]
 
 [ext_resource type="PackedScene" uid="uid://d3frg2jqv7v07" path="res://Level/BuildingBlocks/Tiles/wood_floor_envy_tile.tscn" id="1_vd1nl"]
 [ext_resource type="Texture2D" uid="uid://dd06d7frk0srs" path="res://Level/BuildingBlocks/RawImports/Tiles wood floor_WoodFloor048_1K-PNG_Color.png" id="2_wjycf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kxs0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4cfa"]
 albedo_texture = ExtResource("2_wjycf")
@@ -15,6 +17,14 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="PlaneMesh" id="PlaneMesh_w11w1"]
 
 [node name="UnwalkableGround" type="Node3D"]
+
+[node name="UnwalkableGroundCollider" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnwalkableGroundCollider"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_5kxs0")
 
 [node name="Tiles wood floor" parent="." instance=ExtResource("1_vd1nl")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.95, 0)
