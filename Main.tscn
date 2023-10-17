@@ -419,18 +419,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
 [node name="Snake" parent="Level/Enemies" instance=ExtResource("9_o233r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -4)
 
-[node name="Snake2" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -4)
-
-[node name="Snake3" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -4)
-
-[node name="Snake4" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, -4)
-
-[node name="Snake5" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -4)
-
 [node name="Player" parent="." instance=ExtResource("10_57nnn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
 

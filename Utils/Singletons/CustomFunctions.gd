@@ -9,14 +9,7 @@ func create_ray_and_register_hit(click_position:Vector2, collision_layer: int = 
 	ray_params.from = ray_origin
 	ray_params.to = ray_end
 	# if no collision layer is provided, hit all layers
-#	if collision_layer != -1:
-#		print("setting col layer", collision_layer)
-#		ray_params.set_collision_mask(collision_layer)
-	
-#	print("ray_params",ray_params)
 	var result:Dictionary = space_state.intersect_ray(ray_params)
-#	print(result)
-#	print("---")
 	return result
 
 func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: PackedScene, parent_of_new_node3d: Node = get_tree().root) -> Node3D:

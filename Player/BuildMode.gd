@@ -14,7 +14,6 @@ var build_location:Vector3 = Vector3.INF
 
 func _input(event) -> void:
 	if parent.is_in_build_mode:
-		print(build_location)
 		check_if_valid_building_emplacement(event)
 		build_tower(event)
 
@@ -49,7 +48,6 @@ func display_tower_preview(tower_ground: Node3D) -> void:
 
 func build_tower(event) -> void:
 	if build_location != Vector3.INF and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		print("CLICK")
 		# Instantiate and create tower
 		CustomFunctions.instantiate_and_append_to_node3d(build_location, arrow_tower_scene,towers_container)
 		# Delete Tower Preview
