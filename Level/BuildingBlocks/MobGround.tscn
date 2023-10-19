@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg4geq78kba0l"]
+[gd_scene load_steps=9 format=3 uid="uid://bg4geq78kba0l"]
 
-[ext_resource type="PackedScene" uid="uid://b33d0vf5ib4iw" path="res://Level/BuildingBlocks/Tiles/red_carpet_envy_tile.tscn" id="1_67mq4"]
-[ext_resource type="Texture2D" uid="uid://der5j8box1717" path="res://Level/BuildingBlocks/RawImports/tiles red carpet_Red carpet.png" id="2_7inrr"]
+[ext_resource type="Texture2D" uid="uid://dus050vny7lao" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_color_2k.jpg" id="1_rybpx"]
+[ext_resource type="Texture2D" uid="uid://b265sfvkugiqj" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_normal_directx_2k.png" id="2_iwnk1"]
+[ext_resource type="Texture2D" uid="uid://d4iji6da4uyqh" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_roughness_2k.jpg" id="3_0nrck"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lolhf"]
 
@@ -13,7 +14,12 @@ sample_partition_type = 1
 [sub_resource type="PlaneMesh" id="PlaneMesh_t0an8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4cfa"]
-albedo_texture = ExtResource("2_7inrr")
+diffuse_mode = 3
+albedo_color = Color(0.901961, 0, 0.152941, 1)
+albedo_texture = ExtResource("1_rybpx")
+roughness_texture = ExtResource("3_0nrck")
+normal_enabled = true
+normal_texture = ExtResource("2_iwnk1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
 
@@ -35,10 +41,6 @@ navigation_layers = 17
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 1, 0)
 visible = false
 mesh = SubResource("PlaneMesh_t0an8")
-
-[node name="tiles red carpet" parent="." instance=ExtResource("1_67mq4")]
-transform = Transform3D(4.37114e-08, 8.74228e-08, -1, -8.74228e-08, -1, -8.74228e-08, -1, 8.74228e-08, -4.37114e-08, 0, 0.95, 0)
-visible = false
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

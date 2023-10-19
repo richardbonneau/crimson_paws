@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://nfjm7kkpowr0"]
+[gd_scene load_steps=10 format=3 uid="uid://nfjm7kkpowr0"]
 
-[ext_resource type="Texture2D" uid="uid://exs2mt5xnr60" path="res://Level/BuildingBlocks/RawImports/fancy_black_flipped_tiles fancy black.png" id="1_sd52b"]
+[ext_resource type="Texture2D" uid="uid://bcsqsdskt2wym" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_color_2k.jpg" id="1_5ll23"]
 [ext_resource type="PackedScene" uid="uid://45noid7xnd8b" path="res://Level/BuildingBlocks/Tiles/black_envy_tile.tscn" id="1_ysabe"]
+[ext_resource type="Texture2D" uid="uid://bisq7gc6xi3tg" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_normal_directx_2k.png" id="2_ji73n"]
+[ext_resource type="Texture2D" uid="uid://comhwimq6t1nq" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_roughness_2k.jpg" id="3_f8mpy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noyrx"]
-albedo_texture = ExtResource("1_sd52b")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6mt8"]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_5ll23")
+roughness_texture = ExtResource("3_f8mpy")
+normal_enabled = true
+normal_texture = ExtResource("2_ji73n")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
+material = SubResource("StandardMaterial3D_o6mt8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sf5m3"]
 
@@ -20,7 +27,6 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_noyrx")
 mesh = SubResource("BoxMesh_n2lsi")
 
 [node name="BlackEnvyTile" parent="." instance=ExtResource("1_ysabe")]
