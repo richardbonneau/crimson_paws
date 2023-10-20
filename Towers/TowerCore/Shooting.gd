@@ -8,7 +8,7 @@ var projectile_scene:PackedScene = preload("res://Towers/Projectile/Projectile.t
 @onready var shooting_cooldown_bar:Sprite3D = $ShootCooldown
 @onready var shootCooldownTimer:Timer = $ShootCooldownTimer
 @onready var detection_area:Area3D = $Detection/DetectionArea
-@onready var enemies_positions_in_maze_node = get_tree().get_nodes_in_group("EnemiesProgress")[0]
+@onready var enemies_positions_in_maze_node = get_tree().get_first_node_in_group("EnemiesProgress")
 
 var damage:int = 1
 var current_target:Node3D

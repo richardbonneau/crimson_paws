@@ -9,7 +9,6 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhdgd"]
 vertices = PackedVector3Array(-1, 1.5, -1, -1, 1.5, 1, 1, 1.5, 1, 1, 1.5, -1)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-sample_partition_type = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t0an8"]
 
@@ -23,7 +22,7 @@ normal_texture = ExtResource("2_iwnk1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
 
-[node name="MobGround" type="Node3D"]
+[node name="MobGround" type="Node3D" groups=["MobGround"]]
 
 [node name="MobGroundCollider" type="StaticBody3D" parent="."]
 collision_layer = 16

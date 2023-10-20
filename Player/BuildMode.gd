@@ -9,7 +9,7 @@ var tower_preview:Node3D
 var build_location:Vector3 = Vector3.INF
 
 @onready var parent:CharacterBody3D = get_parent()
-@onready var towers_container:Node3D = get_tree().get_nodes_in_group("TowersContainer")[0]
+@onready var towers_container:Node3D = get_tree().get_first_node_in_group("TowersContainer")
 
 
 func _input(event) -> void:

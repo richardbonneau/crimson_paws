@@ -19,12 +19,9 @@ var waypoint_index = 0
 var distance_to_next_waypoint:float = 0
 
 func _ready():
-	#	Get the corners array
-	start_node = get_tree().get_nodes_in_group("Start")[0]
+	#	Get the waypoints array
+	start_node = get_tree().get_first_node_in_group("Start")
 	_waypoints = start_node.td_maze_corners
-	#	Find the Exit Node
-	exit_node = get_tree().get_nodes_in_group("Exit")[0]
-	_waypoints.append(exit_node)
 	
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.

@@ -108,4 +108,5 @@ zoom_out={
 3d_navigation/layer_1="MobNav"
 3d_physics/layer_5="Player"
 3d_navigation/layer_5="PlayerNav"
+3d_physics/layer_9="MobExit"
 3d_physics/layer_13="TowerBuildingSpot"

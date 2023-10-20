@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
 [ext_resource type="PackedScene" uid="uid://bwtkfhjmm0ncn" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 [ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/Player.tscn" id="10_57nnn"]
+[ext_resource type="Script" path="res://UI/temp_spawn_snake.gd" id="11_1hx37"]
 [ext_resource type="Script" path="res://UI/temp_build_mode_ui.gd" id="11_6682h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
@@ -218,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
 [node name="TowerGround85" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
 
-[node name="MobGround" type="Node3D" parent="Level/BuildingBlocks" groups=["MobGround"]]
+[node name="MobGround" type="Node3D" parent="Level/BuildingBlocks" groups=["MobGroundContainer"]]
 
 [node name="MobGround8" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
@@ -629,14 +630,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -6)
 
 [node name="Zones" type="Node3D" parent="Level/BuildingBlocks"]
 
-[node name="Exit" parent="Level/BuildingBlocks/Zones" groups=["Exit"] instance=ExtResource("3_h8eii")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
-
 [node name="Start" parent="Level/BuildingBlocks/Zones" instance=ExtResource("5_0j6or")]
+
+[node name="Exit" parent="Level/BuildingBlocks/Zones" groups=["Exit"] instance=ExtResource("3_h8eii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
 
 [node name="Towers" type="Node3D" parent="Level" groups=["TowersContainer"]]
 
-[node name="Enemies" type="Node3D" parent="Level"]
+[node name="Enemies" type="Node3D" parent="Level" groups=["EnemiesContainer"]]
 
 [node name="Snake" parent="Level/Enemies" instance=ExtResource("9_o233r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -4)
@@ -660,19 +661,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="UI/BuildingMenu"]
+[node name="Debug" type="Control" parent="UI"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Debug"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_top = -31.0
-offset_right = 73.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="UI/Debug/HBoxContainer"]
+layout_mode = 2
 text = "Place Basic Tower"
 script = ExtResource("11_6682h")
 
-[connection signal="pressed" from="UI/BuildingMenu/Button" to="UI/BuildingMenu/Button" method="_on_pressed"]
+[node name="SpawnSnake" type="Button" parent="UI/Debug/HBoxContainer"]
+layout_mode = 2
+text = "Spawn Snake"
+script = ExtResource("11_1hx37")
+
+[connection signal="pressed" from="UI/Debug/HBoxContainer/Button" to="UI/Debug/HBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="UI/Debug/HBoxContainer/SpawnSnake" to="UI/Debug/HBoxContainer/SpawnSnake" method="_on_pressed"]
