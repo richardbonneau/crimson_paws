@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
-[ext_resource type="PackedScene" uid="uid://bwtkfhjmm0ncn" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 [ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Player/Player.tscn" id="10_57nnn"]
 [ext_resource type="Script" path="res://UI/temp_spawn_snake.gd" id="11_1hx37"]
 [ext_resource type="Script" path="res://UI/temp_build_mode_ui.gd" id="11_6682h"]
@@ -638,9 +637,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
 [node name="Towers" type="Node3D" parent="Level" groups=["TowersContainer"]]
 
 [node name="Enemies" type="Node3D" parent="Level" groups=["EnemiesContainer"]]
-
-[node name="Snake" parent="Level/Enemies" instance=ExtResource("9_o233r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -4)
 
 [node name="Player" parent="." instance=ExtResource("10_57nnn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)

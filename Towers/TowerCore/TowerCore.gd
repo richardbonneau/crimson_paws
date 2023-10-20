@@ -10,7 +10,7 @@ var is_building_blueprint:bool = false :
 	set(value):
 		is_detection_visualizer_visible = value
 		# TODO: Crashes on load otherwise. Is there a better way to prevent the crash?
-		if $Shooting/Detection/DetectionVisualizer:
+		if has_node("Shooting/Detection/DetectionVisualizer"):
 			$Shooting/Detection/DetectionVisualizer.visible = value
 
 @export var detection_radius: float = 5.0 :

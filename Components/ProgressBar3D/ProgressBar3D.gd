@@ -28,8 +28,7 @@ func _on_progress_change_delay_timeout():
 	is_interpolating = true
 	
 
-func _physics_process(delta):
-	print(delay_timer.time_left)
+func _physics_process(_delta):
 	if is_interpolating:
 		preview_bar.value = preview_bar.value - damage_lag_lerp_speed
 		if abs(preview_bar.value - progress_bar.value) < 0.01:
