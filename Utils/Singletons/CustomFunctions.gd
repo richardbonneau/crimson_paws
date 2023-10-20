@@ -1,6 +1,6 @@
 extends Node
 
-func create_ray_and_register_hit(click_position:Vector2, collision_layer: int = -1) -> Dictionary:
+func create_ray_and_register_hit(click_position:Vector2) -> Dictionary:
 	var camera: Camera3D = get_viewport().get_camera_3d()
 	var ray_origin: Vector3 = camera.project_ray_origin(click_position)
 	var ray_end: Vector3 = ray_origin + camera.project_ray_normal(click_position) * 1000.0

@@ -53,7 +53,7 @@ draw_pass_1 = SubResource("QuadMesh_c2cw6")
 billboard = 1
 texture = SubResource("ViewportTexture_8tgho")
 script = ExtResource("3_tla0y")
-lerp_speed = 0.02
+lerp_speed = 0.1
 
 [node name="ProgressChangeDelay" type="Timer" parent="Health/HealthBar"]
 wait_time = 0.5

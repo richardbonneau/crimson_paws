@@ -5,7 +5,7 @@ extends Sprite3D
 @onready var delay_timer:Timer = $ProgressChangeDelay
 
 var substract_delay:bool = false
-var value_to_catch_up_to:int = 0
+var value_to_catch_up_to:float = 0
 var is_interpolating:bool = false
 @export var lerp_speed:float = 0.01
 
@@ -14,7 +14,6 @@ func set_max_value(max_value:float):
 	preview_bar.max_value = max_value
 
 func set_value(value:float):
-	
 	if substract_delay:
 		print("value",value)
 		progress_bar.value = value

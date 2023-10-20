@@ -19,7 +19,7 @@ func _input(event) -> void:
 
 func check_if_valid_building_emplacement(event) -> void:
 	if event is InputEventMouseMotion:
-		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position, 13)
+		var result:Dictionary = CustomFunctions.create_ray_and_register_hit(event.position)
 		# If the ray hits a towerground collider, instantiate a tower preview
 		if result and "collider" in result and result["collider"].name == "TowerGroundCollider":
 			# TODO: replace dictionary(result) with Node (result[collider])
