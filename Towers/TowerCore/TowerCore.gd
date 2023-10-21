@@ -1,6 +1,8 @@
 @tool
 extends Node3D
 
+@onready var shooting:Node3D = $Shooting
+
 var is_building_blueprint:bool = false :
 	set(value):
 		is_building_blueprint = value
@@ -29,4 +31,5 @@ func set_detection_radius():
 
 func set_stats(tower_data:TowerData):
 	self.detection_radius = tower_data.radius
-	$Shooting.set_attack_speed(tower_data.attack_speed)
+	shooting.set_attack_speed(tower_data.attack_speed)
+	shooting.set_damage(tower_data.damage)

@@ -10,7 +10,7 @@ var projectile_scene:PackedScene = preload("res://Towers/Projectile/Projectile.t
 @onready var detection_area:Area3D = $Detection/DetectionArea
 @onready var enemies_positions_in_maze_node = get_tree().get_first_node_in_group("EnemiesProgress")
 
-var damage:int = 1
+var damage:float = 1
 var current_target:Node3D
 
 func _ready()-> void:
@@ -23,6 +23,8 @@ func _process(_delta:float)->void:
 func set_attack_speed(new_attack_speed:float) -> void:
 	attack_speed = new_attack_speed
 	shootCooldownTimer.set_wait_time(new_attack_speed)
+func set_damage(new_damage:float)->void:
+	damage = new_damage
 
 func find_enemy_in_range_furthest_in_maze():
 	var enemies_positions_in_maze = enemies_positions_in_maze_node.enemies_sorted_by_placement_in_maze

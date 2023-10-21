@@ -2,6 +2,7 @@ extends Resource
 class_name TowerData
 
 @export var id: TowerDictionary.TowerType
+@export var damage:float = 1.0
 @export var attack_speed : float = 0.5
 @export var radius: float = 5.0
 @export var scene : PackedScene

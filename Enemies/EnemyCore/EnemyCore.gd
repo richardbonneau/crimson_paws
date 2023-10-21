@@ -8,7 +8,6 @@ var rotation_speed:float = 8
 @onready var health:Node3D = $Health
 @onready var navigation:Node3D = $Navigation
 
-
 func set_stats(enemy_data:EnemyData):
 	self.movement_speed = enemy_data.movement_speed
 	self.rotation_speed = enemy_data.rotation_speed
