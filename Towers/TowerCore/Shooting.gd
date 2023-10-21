@@ -27,7 +27,7 @@ func set_attack_speed(new_attack_speed:float) -> void:
 func find_enemy_in_range_furthest_in_maze():
 	var enemies_positions_in_maze = enemies_positions_in_maze_node.enemies_sorted_by_placement_in_maze
 	for enemy in enemies_positions_in_maze:
-		if detection_area.enemies_in_range.has(enemy):
+		if is_instance_valid(enemy) and detection_area.enemies_in_range.has(enemy):
 			return enemy
 	return null
 

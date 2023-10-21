@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 CustomFunctions="*res://Utils/Singletons/CustomFunctions.gd"
+EnemyDictionary="*res://Utils/Singletons/EnemyDictionary.gd"
+TowerDictionary="*res://Utils/Singletons/TowerDictionary.gd"
 
 [editor]
 

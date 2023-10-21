@@ -14,6 +14,8 @@ func _ready():
 	health_bar.substract_delay = true
 
 func set_max_health(new_max_health:int):
+	max_health = new_max_health
+	current_health = new_max_health
 	health_bar.set_max_value(new_max_health)
 
 func take_damage(incoming_damage:int):
