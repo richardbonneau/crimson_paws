@@ -17,7 +17,7 @@ albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5u6lr"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2dd17"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r7jxm"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_00dot"]
@@ -48,7 +48,7 @@ mesh = SubResource("CapsuleMesh_5u6lr")
 
 [node name="ShootCooldown" parent="Shooting" instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21989, 0)
-texture = SubResource("ViewportTexture_2dd17")
+texture = SubResource("ViewportTexture_r7jxm")
 
 [node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 

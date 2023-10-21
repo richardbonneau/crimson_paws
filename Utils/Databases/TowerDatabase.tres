@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TowerDatabase" load_steps=3 format=3 uid="uid://ddy63dggq3el4"]
+
+[ext_resource type="Script" path="res://Utils/Databases/Scripts/TowerDatabase.gd" id="1_um3e6"]
+[ext_resource type="Resource" uid="uid://cs0aw31p06wb4" path="res://Towers/TowerVariants/ArrowTurret/ArrowTurretData.tres" id="2_amy35"]
+
+[resource]
+script = ExtResource("1_um3e6")
+tower_database = Array[Resource("res://Utils/Databases/Scripts/TowerData.gd")]([ExtResource("2_amy35")])

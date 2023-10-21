@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TowerData" load_steps=4 format=3 uid="uid://cs0aw31p06wb4"]
+
+[ext_resource type="Script" path="res://Utils/Databases/Scripts/TowerData.gd" id="1_3hws6"]
+[ext_resource type="PackedScene" uid="uid://cja5tuqr1f4p3" path="res://Towers/TowerVariants/ArrowTurret/Visuals/ArrowTurretVisuals.tscn" id="1_4tdfx"]
+[ext_resource type="PackedScene" uid="uid://df71bs5xjijf0" path="res://Towers/TowerVariants/ArrowTurret/ArrowTurret.tscn" id="1_slxep"]
+
+[resource]
+script = ExtResource("1_3hws6")
+id = 0
+attack_speed = 0.5
+scene = ExtResource("1_slxep")
+building_preview_scene = ExtResource("1_4tdfx")

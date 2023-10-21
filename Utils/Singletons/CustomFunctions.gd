@@ -18,6 +18,11 @@ func instantiate_and_append_to_node3d(new_node3d_position:Vector3, new_node3d: P
 	new_node3d_instance.global_transform.origin = new_node3d_position
 	return new_node3d_instance
 
+func append_instance_to_node3d(instance_position:Vector3, instance: Node3D, parent_of_instance: Node = get_tree().root) -> Node3D:
+	parent_of_instance.add_child(instance)
+	instance.global_transform.origin = instance_position
+	return instance
+
 func change_node_visibility(node3d:Node3D, is_visible: bool):
 	if node3d.visible == !is_visible:
 		node3d.visible = is_visible

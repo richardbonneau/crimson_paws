@@ -7,4 +7,3 @@ class_name EnemyData
 @export var rotation_speed : float = 8
 @export var scene : PackedScene
 
-
