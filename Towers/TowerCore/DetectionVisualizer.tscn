@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6xbho67brvoo"]
+
+[ext_resource type="Script" path="res://Towers/TowerCore/DetectionVisualizer.gd" id="1_wuoie"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5c4"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u6lr"]
+
+[node name="DetectionVisualizer" type="MeshInstance3D"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5k5c4")
+mesh = SubResource("CapsuleMesh_5u6lr")
+script = ExtResource("1_wuoie")

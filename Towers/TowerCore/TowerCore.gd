@@ -25,4 +25,8 @@ func set_detection_radius():
 	# Adjust the collision shape
 	$Shooting/Detection/DetectionArea.scale = Vector3(detection_radius, detection_radius, detection_radius)
 	# Adjust the visual representation
-	$Shooting/Detection/DetectionVisualizer.scale = Vector3(detection_radius, 0.1, detection_radius)
+	$Shooting/Detection/DetectionVisualizer.set_radius(detection_radius)
+
+func set_stats(tower_data:TowerData):
+	self.detection_radius = tower_data.radius
+	$Shooting.set_attack_speed(tower_data.attack_speed)

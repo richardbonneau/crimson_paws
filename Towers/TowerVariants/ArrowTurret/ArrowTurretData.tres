@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("1_3hws6")
 id = 0
-attack_speed = 0.5
+attack_speed = 0.001
+radius = 10.0
 scene = ExtResource("1_slxep")
 building_preview_scene = ExtResource("1_4tdfx")

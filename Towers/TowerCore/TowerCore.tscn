@@ -1,23 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://0i21jaey6f7i"]
+[gd_scene load_steps=10 format=3 uid="uid://0i21jaey6f7i"]
 
 [ext_resource type="Script" path="res://Towers/TowerCore/TowerCore.gd" id="1_hlj18"]
 [ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="2_yqitm"]
 [ext_resource type="Script" path="res://Towers/TowerCore/Shooting.gd" id="3_iog0w"]
 [ext_resource type="Script" path="res://Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
+[ext_resource type="PackedScene" uid="uid://c6xbho67brvoo" path="res://Towers/TowerCore/DetectionVisualizer.tscn" id="4_ik3rm"]
 [ext_resource type="Script" path="res://Towers/TowerCore/BuildingBlueprint.gd" id="5_0jwxp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5c4"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.619608, 0.0431373, 0.117647, 0.698039)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u6lr"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_r7jxm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xa32n"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_00dot"]
@@ -41,14 +33,11 @@ script = ExtResource("4_2w3pg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Shooting/Detection/DetectionArea"]
 shape = SubResource("CapsuleShape3D_cdx4r")
 
-[node name="DetectionVisualizer" type="MeshInstance3D" parent="Shooting/Detection"]
-transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_5k5c4")
-mesh = SubResource("CapsuleMesh_5u6lr")
+[node name="DetectionVisualizer" parent="Shooting/Detection" instance=ExtResource("4_ik3rm")]
 
 [node name="ShootCooldown" parent="Shooting" instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21989, 0)
-texture = SubResource("ViewportTexture_r7jxm")
+texture = SubResource("ViewportTexture_xa32n")
 
 [node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 

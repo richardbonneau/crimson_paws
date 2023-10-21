@@ -4,6 +4,7 @@ enum TowerType {
 	ARROW = 0,
 }
 
+var detection_visualizer:PackedScene = preload("res://Towers/TowerCore/DetectionVisualizer.tscn")
 var tower_database:TowerDatabase = preload("res://Utils/Databases/TowerDatabase.tres")
 var tower_dictionary:Dictionary = {}
 
@@ -25,7 +26,11 @@ func create_tower_instance(id:TowerType):
 
 func create_tower_build_preview(id:TowerType):
 	var tower_data:TowerData = get_tower_by_id(id)
-	print(tower_data)
 	var tower_build_preview_instance:Node3D = tower_data.building_preview_scene.instantiate()
+	var detection_visualizer_instance:MeshInstance3D = detection_visualizer.instantiate()
+	
+	detection_visualizer_instance.set_radius(tower_data.radius)
+	tower_build_preview_instance.add_child(detection_visualizer_instance)
+	
 	return tower_build_preview_instance
 
