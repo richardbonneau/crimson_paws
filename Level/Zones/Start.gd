@@ -33,4 +33,9 @@ func detect_corners():
 	
 	# Add the exit node
 	td_maze_corners.append(exit_node)
+	
+	for corner in td_maze_corners:
+		var i = debug_mesh.instantiate()
+		corner.add_child(i)
+		i.transform.origin = corner.transform.origin
 

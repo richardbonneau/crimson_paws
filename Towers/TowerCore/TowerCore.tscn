@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jnhv3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8sj1d"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_00dot"]
@@ -29,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
 [node name="DetectionArea" type="Area3D" parent="Shooting/Detection"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0251899, 0.00919819, 0.0138192)
+collision_layer = 0
 input_ray_pickable = false
 script = ExtResource("4_2w3pg")
 
@@ -39,7 +40,7 @@ shape = SubResource("CapsuleShape3D_cdx4r")
 
 [node name="ShootCooldown" parent="Shooting" instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21989, 0)
-texture = SubResource("ViewportTexture_jnhv3")
+texture = SubResource("ViewportTexture_8sj1d")
 
 [node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 

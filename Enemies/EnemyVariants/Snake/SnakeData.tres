@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_5lvtp")
 id = 0
-health = 10
-movement_speed = 3.0
+health = 10.0
+movement_speed = 15.0
 rotation_speed = 8.0
+life_cost = 1
 scene = ExtResource("1_1vmw7")

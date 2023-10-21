@@ -12,11 +12,11 @@ func _init() -> void:
 	for enemy in enemy_database.enemy_database:
 		enemy_dictionary[enemy.id] = enemy
 
-func get_enemy_by_id(id:EnemyType)->EnemyData:
+func get_enemy_data_by_id(id:EnemyType)->EnemyData:
 	return enemy_dictionary.get(id, null)
 
 func create_enemy_instance(id:EnemyType):
-	var enemy_data:EnemyData = get_enemy_by_id(id)
+	var enemy_data:EnemyData = get_enemy_data_by_id(id)
 	var enemy_instance:Node3D = enemy_data.scene.instantiate()
 	
 	# Wait for all nodes to be ready before changing the stats of the instance
