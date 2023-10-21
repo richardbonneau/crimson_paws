@@ -14,6 +14,8 @@ func _physics_process(_delta:float):
 	if _target and is_instance_valid(_target):
 		var direction = (_target.global_transform.origin - global_transform.origin).normalized()
 		linear_velocity = direction * speed
+	else:
+		self.queue_free()
 
 func seek_and_destroy_target(target: Node3D, new_damage:int):
 	damage = new_damage
