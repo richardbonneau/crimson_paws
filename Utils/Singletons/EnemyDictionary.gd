@@ -5,7 +5,7 @@ enum EnemyType {
 	HYDRA = 1
 }
 
-var enemy_database:EnemyDatabase = preload("res://Utils/Databases/EnemyDatabase.tres")
+var enemy_database:EnemyDatabase = preload("res://Utils/Databases/EnemyDatabase/EnemyDatabase.tres")
 var enemy_dictionary:Dictionary = {}
 
 func _init() -> void:

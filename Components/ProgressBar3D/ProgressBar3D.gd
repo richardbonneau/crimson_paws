@@ -11,7 +11,9 @@ var is_interpolating:bool = false
 
 func set_max_value(max_value:float):
 	progress_bar.max_value = max_value
+	progress_bar.value = max_value
 	preview_bar.max_value = max_value
+	preview_bar.value = max_value
 
 func set_value(value:float):
 	if substract_delay:

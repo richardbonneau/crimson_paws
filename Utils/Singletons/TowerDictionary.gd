@@ -4,8 +4,9 @@ enum TowerType {
 	ARROW = 0,
 }
 
-var detection_visualizer:PackedScene = preload("res://Towers/TowerCore/DetectionVisualizer.tscn")
-var tower_database:TowerDatabase = preload("res://Utils/Databases/TowerDatabase.tres")
+@export var detection_visualizer:PackedScene = preload("res://Towers/TowerCore/DetectionVisualizer.tscn")
+@export var tower_database:TowerDatabase = preload("res://Utils/Databases/TowerDatabase/TowerDatabase.tres")
+
 var tower_dictionary:Dictionary = {}
 
 func _init() -> void:

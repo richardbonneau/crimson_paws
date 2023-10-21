@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://0i21jaey6f7i"]
+[gd_scene load_steps=11 format=3 uid="uid://0i21jaey6f7i"]
 
 [ext_resource type="Script" path="res://Towers/TowerCore/TowerCore.gd" id="1_hlj18"]
 [ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Components/ProgressBar3D/ProgressBar3D.tscn" id="2_yqitm"]
+[ext_resource type="PackedScene" uid="uid://dfd5csahevltp" path="res://Towers/Projectile/Projectile.tscn" id="3_inpmn"]
 [ext_resource type="Script" path="res://Towers/TowerCore/Shooting.gd" id="3_iog0w"]
 [ext_resource type="Script" path="res://Towers/TowerCore/DetectionArea.gd" id="4_2w3pg"]
 [ext_resource type="PackedScene" uid="uid://c6xbho67brvoo" path="res://Towers/TowerCore/DetectionVisualizer.tscn" id="4_ik3rm"]
@@ -9,7 +10,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_axesv"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jnhv3"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_00dot"]
@@ -21,6 +22,7 @@ is_detection_visualizer_visible = true
 [node name="Shooting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 script = ExtResource("3_iog0w")
+projectile_scene = ExtResource("3_inpmn")
 
 [node name="Detection" type="Node3D" parent="Shooting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
@@ -37,7 +39,7 @@ shape = SubResource("CapsuleShape3D_cdx4r")
 
 [node name="ShootCooldown" parent="Shooting" instance=ExtResource("2_yqitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21989, 0)
-texture = SubResource("ViewportTexture_axesv")
+texture = SubResource("ViewportTexture_jnhv3")
 
 [node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
 

@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://c8g6qnwo5tqtn"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://uqakjy7qwk8d"]
 
-[ext_resource type="PackedScene" uid="uid://bwtkfhjmm0ncn" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="1_gsblu"]
-[ext_resource type="Script" path="res://Utils/Databases/Scripts/EnemyData.gd" id="2_shulx"]
+[ext_resource type="PackedScene" uid="uid://bwtkfhjmm0ncn" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="1_1vmw7"]
+[ext_resource type="Script" path="res://Utils/Databases/EnemyDatabase/Scripts/EnemyData.gd" id="1_5lvtp"]
 
 [resource]
-script = ExtResource("2_shulx")
+script = ExtResource("1_5lvtp")
 id = 0
-health = 5
-movement_speed = 4.0
+health = 10
+movement_speed = 3.0
 rotation_speed = 8.0
-scene = ExtResource("1_gsblu")
+scene = ExtResource("1_1vmw7")

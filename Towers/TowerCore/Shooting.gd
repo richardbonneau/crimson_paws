@@ -1,8 +1,8 @@
 extends Node3D
 
-var projectile_scene:PackedScene = preload("res://Towers/Projectile/Projectile.tscn")
+@export var projectile_scene:PackedScene
 
-@export var attack_speed:float = 0.5
+var attack_speed:float = 0.5
 
 @onready var parent:Node3D = get_parent()
 @onready var shooting_cooldown_bar:Sprite3D = $ShootCooldown
