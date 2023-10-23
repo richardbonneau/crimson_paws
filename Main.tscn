@@ -237,10 +237,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
 
 [node name="MobGround14" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 0, -4)
+is_curved = true
 
 [node name="MobGround16" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, -2)
+is_curved = true
 
 [node name="MobGround44" parent="Level/BuildingBlocks/MobGround" instance=ExtResource("2_28kvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -2)

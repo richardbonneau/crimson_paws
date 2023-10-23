@@ -1,20 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://lgv7av81h7ac"]
+[gd_scene load_steps=6 format=3 uid="uid://lgv7av81h7ac"]
 
-[ext_resource type="Texture2D" uid="uid://dd17fayjf4sxo" path="res://Level/BuildingBlocks/RawImports/wood_0066_2k_dljIUy/wood_0066_color_2k.jpg" id="2_51g4q"]
-[ext_resource type="Texture2D" uid="uid://cnyj8qkv2cx83" path="res://Level/BuildingBlocks/RawImports/wood_0066_2k_dljIUy/wood_0066_height_2k.png" id="3_8mtmy"]
-[ext_resource type="Texture2D" uid="uid://bxjll5q7gy274" path="res://Level/BuildingBlocks/RawImports/wood_0066_2k_dljIUy/wood_0066_normal_directx_2k.png" id="4_gm1b7"]
-[ext_resource type="Texture2D" uid="uid://bnhfmj2o8v3sg" path="res://Level/BuildingBlocks/RawImports/wood_0066_2k_dljIUy/wood_0066_roughness_2k.jpg" id="5_ryt1c"]
+[ext_resource type="Material" uid="uid://bbthcs0brqtma" path="res://Level/BuildingBlocks/Materials/FancyWood.tres" id="1_n0snq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kxs0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22v4i"]
-diffuse_mode = 3
-albedo_texture = ExtResource("2_51g4q")
-roughness_texture = ExtResource("5_ryt1c")
-normal_enabled = true
-normal_texture = ExtResource("4_gm1b7")
-heightmap_enabled = true
-heightmap_texture = ExtResource("3_8mtmy")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n2lsi"]
 
@@ -37,7 +25,7 @@ shape = SubResource("BoxShape3D_5kxs0")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
-material_override = SubResource("StandardMaterial3D_22v4i")
+material_override = ExtResource("1_n0snq")
 mesh = SubResource("BoxMesh_n2lsi")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

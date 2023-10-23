@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dw5shmmf7hhlf"]
+
+[ext_resource type="Texture2D" uid="uid://dus050vny7lao" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_color_2k.jpg" id="1_486aa"]
+[ext_resource type="Texture2D" uid="uid://b265sfvkugiqj" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_normal_directx_2k.png" id="2_r7od3"]
+[ext_resource type="Texture2D" uid="uid://d4iji6da4uyqh" path="res://Level/BuildingBlocks/RawImports/fabric_0026_2k_4BS6wa/fabric_0026_roughness_2k.jpg" id="3_76ft8"]
+
+[resource]
+diffuse_mode = 3
+albedo_color = Color(0.901961, 0, 0.152941, 1)
+albedo_texture = ExtResource("1_486aa")
+roughness_texture = ExtResource("3_76ft8")
+normal_enabled = true
+normal_texture = ExtResource("2_r7od3")
