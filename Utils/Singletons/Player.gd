@@ -3,7 +3,7 @@ extends Node
 signal set_lives_signal
 signal game_over_signal
 
-var lives:int = 30
+var lives:int = 2
 
 func remove_lives(lives_to_remove:int):
 	lives = lives - lives_to_remove

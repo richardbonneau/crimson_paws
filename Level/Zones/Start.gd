@@ -15,6 +15,7 @@ func _ready():
 
 func detect_corners():
 	var exit_node:ExitZone = get_tree().get_first_node_in_group("Exit")
+	var exit_node_waypoint:Node3D = exit_node.get_node("Waypoint")
 	var all_mob_ground_tiles = get_tree().get_nodes_in_group("MobGround")
 	
 	for i in range(all_mob_ground_tiles.size()):
@@ -31,7 +32,7 @@ func detect_corners():
 				td_maze_corners.append(next_mob_ground.get_node("Waypoint"))
 	
 	# Add the exit node
-	td_maze_corners.append(exit_node)
+	td_maze_corners.append(exit_node_waypoint)
 
 
 func debug_show_maze_corners():
