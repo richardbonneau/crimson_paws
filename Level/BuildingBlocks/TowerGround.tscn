@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://nfjm7kkpowr0"]
+[gd_scene load_steps=9 format=3 uid="uid://nfjm7kkpowr0"]
 
 [ext_resource type="Texture2D" uid="uid://bcsqsdskt2wym" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_color_2k.jpg" id="1_5ll23"]
-[ext_resource type="PackedScene" uid="uid://45noid7xnd8b" path="res://Level/BuildingBlocks/Tiles/black_envy_tile.tscn" id="1_ysabe"]
 [ext_resource type="Texture2D" uid="uid://bisq7gc6xi3tg" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_normal_directx_2k.png" id="2_ji73n"]
 [ext_resource type="Texture2D" uid="uid://comhwimq6t1nq" path="res://Level/BuildingBlocks/RawImports/ground_0023_2k_pEh78d/ground_0023_roughness_2k.jpg" id="3_f8mpy"]
 
@@ -26,14 +25,11 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [node name="TowerGround" type="Node3D"]
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("BoxMesh_n2lsi")
 
-[node name="BlackEnvyTile" parent="." instance=ExtResource("1_ysabe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
-visible = false
-
 [node name="TowerGroundCollider" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 4112
 collision_mask = 16
 
@@ -42,6 +38,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_sf5m3")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 navigation_mesh = SubResource("NavigationMesh_86lu2")
 navigation_layers = 16
 

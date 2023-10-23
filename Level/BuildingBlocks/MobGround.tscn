@@ -25,6 +25,7 @@ normal_texture = ExtResource("2_iwnk1")
 [node name="MobGround" type="Node3D" groups=["MobGround"]]
 
 [node name="MobGroundCollider" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 16
 collision_mask = 16
 
@@ -33,6 +34,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_lolhf")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 navigation_mesh = SubResource("NavigationMesh_uhdgd")
 navigation_layers = 17
 
@@ -42,9 +44,8 @@ visible = false
 mesh = SubResource("PlaneMesh_t0an8")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 material_override = SubResource("StandardMaterial3D_h4cfa")
 mesh = SubResource("BoxMesh_n2lsi")
 
 [node name="Waypoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

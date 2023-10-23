@@ -132,9 +132,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
 [node name="TowerGround9" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
-[node name="TowerGround10" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-
 [node name="TowerGround18" parent="Level/BuildingBlocks/TowerGround" instance=ExtResource("1_5585g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2)
 
@@ -544,15 +541,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
 [node name="UnwalkableGround80" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
 
-[node name="UnwalkableGround81" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-
-[node name="UnwalkableGround82" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
-
-[node name="UnwalkableGround83" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
-
 [node name="UnwalkableGround84" parent="Level/BuildingBlocks/UnwalkableGround" instance=ExtResource("3_c8ijw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 
@@ -631,16 +619,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -6)
 [node name="Zones" type="Node3D" parent="Level/BuildingBlocks"]
 
 [node name="Start" parent="Level/BuildingBlocks/Zones" instance=ExtResource("5_0j6or")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
 
 [node name="Exit" parent="Level/BuildingBlocks/Zones" groups=["Exit"] instance=ExtResource("3_h8eii")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4, 0, 0)
 
 [node name="Towers" type="Node3D" parent="Level" groups=["TowersContainer"]]
 
 [node name="Enemies" type="Node3D" parent="Level" groups=["EnemiesContainer"]]
 
 [node name="Player" parent="." instance=ExtResource("10_57nnn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

@@ -63,5 +63,6 @@ func _physics_process(delta: float) -> void:
 		var target_rotation = self.global_transform.looking_at(look_target, Vector3.UP).basis
 		self.global_transform.basis = self.global_transform.basis.slerp(target_rotation, self.rotation_speed * delta)
 		$"mannequiny-0_4_0/AnimationPlayer".play("walk")
+		print(direction.length())
 		move_and_slide()
 		
