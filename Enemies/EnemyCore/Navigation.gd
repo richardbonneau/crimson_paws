@@ -45,16 +45,14 @@ func go_to_next_waypoint():
 		movement_target_position = _waypoints[waypoint_index].global_transform.origin
 	set_movement_target(movement_target_position)
 
-func is_target_in_range(target_node, threshold, is_wp_reached = false):
+func is_target_in_range(target_node, threshold):
 	var distance = waypoint_finder.global_transform.origin.distance_to(target_node.global_transform.origin)
 	distance_to_next_waypoint = distance
-#	if is_wp_reached:
-#		print("distance ",distance)
 	return distance < threshold
 
 func is_waypoint_reached():
 	var current_waypoint = _waypoints[waypoint_index]
-	return is_target_in_range(current_waypoint, target_reached_offset_threshold, true)
+	return is_target_in_range(current_waypoint, target_reached_offset_threshold)
 
 func is_out_of_last_waypoint_range():
 	var last_waypoint = _waypoints[waypoint_index - 1]
