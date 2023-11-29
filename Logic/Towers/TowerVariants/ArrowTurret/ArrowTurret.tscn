@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://df71bs5xjijf0"]
+
+[ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Logic/Towers/TowerCore/TowerCore.tscn" id="1_gelfg"]
+[ext_resource type="PackedScene" uid="uid://cja5tuqr1f4p3" path="res://Logic/Towers/TowerVariants/ArrowTurret/Visuals/ArrowTurretVisuals.tscn" id="2_rb1ns"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1d5n7"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ArrowTurret" instance=ExtResource("1_gelfg")]
+is_detection_visualizer_visible = false
+detection_radius = 10.0
+
+[node name="DetectionArea" parent="Shooting/Detection" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0251899, 0.00919819, 0.0138192)
+
+[node name="DetectionVisualizer" parent="Shooting/Detection" index="1"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+visible = false
+
+[node name="ShootCooldown" parent="Shooting" index="1"]
+texture = SubResource("ViewportTexture_1d5n7")
+
+[node name="Visuals" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ArrowTurretVisuals" parent="Visuals" index="0" instance=ExtResource("2_rb1ns")]

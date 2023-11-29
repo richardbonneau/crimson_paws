@@ -5,11 +5,12 @@ enum EnemyType {
 	HYDRA = 1
 }
 
-var enemy_database:EnemyDatabase = preload("res://Utils/Databases/EnemyDatabase/EnemyDatabase.tres")
 var enemy_dictionary:Dictionary = {}
+var enemies_data_folder_path:String = "res://Data/Enemies/"
 
 func _init() -> void:
-	for enemy in enemy_database.enemy_database:
+	var all_enemies:Array = CustomFunctions.load_resources_from_folder(enemies_data_folder_path)
+	for enemy in all_enemies:
 		enemy_dictionary[enemy.id] = enemy
 
 func get_enemy_data_by_id(id:EnemyType)->EnemyData:

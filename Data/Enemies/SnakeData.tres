@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://uqakjy7qwk8d"]
+
+[ext_resource type="PackedScene" uid="uid://dqmruew5n573y" path="res://Logic/Enemies/EnemyVariants/Snake/Snake.tscn" id="1_1vmw7"]
+[ext_resource type="Script" path="res://Data/_Scripts/EnemyData.gd" id="1_5lvtp"]
+
+[resource]
+script = ExtResource("1_5lvtp")
+id = 0
+health = 10.0
+movement_speed = 5.0
+rotation_speed = 8.0
+life_cost = 1
+scene = ExtResource("1_1vmw7")

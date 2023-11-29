@@ -26,3 +26,20 @@ func append_instance_to_node3d(instance_position:Vector3, instance: Node3D, pare
 func change_node_visibility(node3d:Node3D, is_visible: bool):
 	if node3d.visible == !is_visible:
 		node3d.visible = is_visible
+
+func load_resources_from_folder(path: String)->Array:
+	var resources_to_return:Array = []
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name: String = dir.get_next()
+		while file_name != "":
+			if not dir.current_is_dir():
+				var resource = load(path + file_name)
+				if resource:
+					resources_to_return.append(resource)
+			file_name = dir.get_next()
+		return resources_to_return
+	else:
+		push_warning("Failed to open directory:", path)
+		return resources_to_return

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://co7hqdbhnpbj3"]
-
-[ext_resource type="Script" path="res://Level/Managers/EnemiesProgress.gd" id="1_jxpot"]
-
-[node name="EnemiesProgress" type="Node" groups=["EnemiesProgress"]]
-script = ExtResource("1_jxpot")

@@ -4,14 +4,13 @@ enum TowerType {
 	ARROW = 0,
 }
 
-@export var tower_database:TowerDatabase = preload("res://Utils/Databases/TowerDatabase/TowerDatabase.tres")
-
 var tower_dictionary:Dictionary = {}
+var towers_data_folder_path:String = "res://Data/Towers/"
 
 func _init() -> void:
-	for tower in tower_database.tower_database:
+	var all_towers:Array = CustomFunctions.load_resources_from_folder(towers_data_folder_path)
+	for tower in all_towers:
 		tower_dictionary[tower.id] = tower
-	print(tower_dictionary)
 
 func get_tower_by_id(id:TowerType)->TowerData:
 	return tower_dictionary.get(id, null)

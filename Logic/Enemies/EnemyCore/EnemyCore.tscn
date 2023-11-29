@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://filtursrou60"]
+
+[ext_resource type="Script" path="res://Logic/Enemies/EnemyCore/EnemyCore.gd" id="1_8kaq0"]
+[ext_resource type="Script" path="res://Logic/Enemies/EnemyCore/Health.gd" id="2_6j1f0"]
+[ext_resource type="Script" path="res://Logic/Components/ProgressBar3D/ProgressBar3D.gd" id="3_tla0y"]
+[ext_resource type="Material" uid="uid://cl0d2no6865ad" path="res://Logic/Enemies/EnemyCore/Particles/DyingEnemy.tres" id="4_1klg6"]
+[ext_resource type="Texture2D" uid="uid://3ofdgmjwdyif" path="res://Logic/Components/ProgressBar3D/RawImports/barHorizontal_green.png" id="4_h1ff7"]
+[ext_resource type="Script" path="res://Logic/Enemies/EnemyCore/Navigation.gd" id="5_5j80d"]
+[ext_resource type="Texture2D" uid="uid://dsaiptb4nmr2v" path="res://Logic/Components/ProgressBar3D/RawImports/barHorizontal_yellow.png" id="5_p5aei"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5i3t"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lns22"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 5, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+tangential_accel_min = 55.67
+tangential_accel_max = 55.67
+
+[sub_resource type="QuadMesh" id="QuadMesh_c2cw6"]
+material = ExtResource("4_1klg6")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8tgho"]
+viewport_path = NodePath("Health/HealthBar/SubViewport")
+
+[node name="EnemyCore" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 0
+script = ExtResource("1_8kaq0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_p5i3t")
+
+[node name="Health" type="Node3D" parent="."]
+script = ExtResource("2_6j1f0")
+
+[node name="DeathTimer" type="Timer" parent="Health"]
+
+[node name="DeathParticles" type="GPUParticles3D" parent="Health"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_lns22")
+draw_pass_1 = SubResource("QuadMesh_c2cw6")
+
+[node name="HealthBar" type="Sprite3D" parent="Health"]
+billboard = 1
+texture = SubResource("ViewportTexture_8tgho")
+script = ExtResource("3_tla0y")
+
+[node name="ProgressChangeDelay" type="Timer" parent="Health/HealthBar"]
+wait_time = 0.5
+
+[node name="SubViewport" type="SubViewport" parent="Health/HealthBar"]
+disable_3d = true
+transparent_bg = true
+
+[node name="Control" type="Control" parent="Health/HealthBar/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="YellowBar" type="TextureProgressBar" parent="Health/HealthBar/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.0
+offset_top = 216.0
+offset_right = 336.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("5_p5aei")
+
+[node name="GreenBar" type="TextureProgressBar" parent="Health/HealthBar/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.0
+offset_top = 216.0
+offset_right = 336.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("4_h1ff7")
+
+[node name="Navigation" type="Node3D" parent="."]
+script = ExtResource("5_5j80d")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Navigation"]
+path_max_distance = 14.61
+path_postprocessing = 1
+
+[node name="WaypointFinder" type="Node3D" parent="Navigation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[connection signal="timeout" from="Health/DeathTimer" to="Health" method="_on_death_timer_timeout"]
+[connection signal="timeout" from="Health/HealthBar/ProgressChangeDelay" to="Health/HealthBar" method="_on_progress_change_delay_timeout" flags=18]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3frg2jqv7v07"]
-
-[ext_resource type="PackedScene" uid="uid://483l0fhdujmx" path="res://Level/BuildingBlocks/RawImports/Tiles wood floor.glb" id="1_q0x3v"]
-
-[node name="Tiles wood floor" instance=ExtResource("1_q0x3v")]

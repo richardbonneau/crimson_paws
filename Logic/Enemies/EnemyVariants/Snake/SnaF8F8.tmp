@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqmruew5n573y"]
+
+[ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Logic/Enemies/EnemyCore/EnemyCore.tscn" id="1_lht1d"]
+[ext_resource type="PackedScene" uid="uid://chb1wfph02cgm" path="res://Logic/Enemies/EnemyVariants/Snake/RawImports/Snake/Snake.glb" id="2_b50yi"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ycbul"]
+viewport_path = NodePath("Health/HealthBar/SubViewport")
+
+[node name="Snake" instance=ExtResource("1_lht1d")]
+
+[node name="HealthBar" parent="Health" index="2"]
+texture = SubResource("ViewportTexture_ycbul")
+
+[node name="Snake" parent="." index="3" instance=ExtResource("2_b50yi")]

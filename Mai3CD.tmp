@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://cl83ybd53y27d"]
 
-[ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
-[ext_resource type="Script" path="res://Level/EnemiesProgress.gd" id="1_ad18d"]
-[ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
-[ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
-[ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
-[ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Level/Towers/BasicTower/BasicTower.tscn" id="3_osceu"]
-[ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Level/Enemies/BasicEnemy.tscn" id="4_218k4"]
-[ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
+[ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Logic/Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
+[ext_resource type="Script" path="res://Logic/Level/EnemiesProgress.gd" id="1_ad18d"]
+[ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Logic/Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
+[ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Logic/Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
+[ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Logic/Level/Zones/exit.tscn" id="3_h8eii"]
+[ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Logic/Level/Towers/BasicTower/BasicTower.tscn" id="3_osceu"]
+[ext_resource type="PackedScene" uid="uid://filtursrou60" path="res://Logic/Level/Enemies/BasicEnemy.tscn" id="4_218k4"]
+[ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Logic/Level/Zones/Start.tscn" id="5_0j6or"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)

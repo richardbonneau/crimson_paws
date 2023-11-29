@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://0i21jaey6f7i"]
+
+[ext_resource type="Script" path="res://Logic/Towers/TowerCore/TowerCore.gd" id="1_kficf"]
+[ext_resource type="Script" path="res://Logic/Towers/TowerCore/Shooting.gd" id="2_vtmmm"]
+[ext_resource type="PackedScene" uid="uid://dfd5csahevltp" path="res://Logic/Towers/Projectile/Projectile.tscn" id="3_tvecq"]
+[ext_resource type="Script" path="res://Logic/Towers/TowerCore/DetectionArea.gd" id="4_rr2v1"]
+[ext_resource type="PackedScene" uid="uid://c6xbho67brvoo" path="res://Logic/Towers/TowerCore/DetectionVisualizer.tscn" id="5_ds3j4"]
+[ext_resource type="PackedScene" uid="uid://xb4jui74wqqu" path="res://Logic/Components/ProgressBar3D/ProgressBar3D.tscn" id="6_du67v"]
+[ext_resource type="Script" path="res://Logic/Towers/TowerCore/BuildingBlueprint.gd" id="7_t5r6s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdx4r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iadmt"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00dot"]
+
+[node name="TowerCore" type="Node3D"]
+script = ExtResource("1_kficf")
+is_detection_visualizer_visible = true
+
+[node name="Shooting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+script = ExtResource("2_vtmmm")
+projectile_scene = ExtResource("3_tvecq")
+
+[node name="Detection" type="Node3D" parent="Shooting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="DetectionArea" type="Area3D" parent="Shooting/Detection"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0251899, 0.00919819, 0.0138192)
+collision_layer = 0
+input_ray_pickable = false
+script = ExtResource("4_rr2v1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shooting/Detection/DetectionArea"]
+shape = SubResource("CapsuleShape3D_cdx4r")
+
+[node name="DetectionVisualizer" parent="Shooting/Detection" instance=ExtResource("5_ds3j4")]
+
+[node name="ShootCooldown" parent="Shooting" instance=ExtResource("6_du67v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21989, 0)
+texture = SubResource("ViewportTexture_iadmt")
+
+[node name="ShootCooldownTimer" type="Timer" parent="Shooting"]
+
+[node name="BuildingBlueprint" type="Node3D" parent="."]
+script = ExtResource("7_t5r6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 256
+collision_mask = 256
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_00dot")
+
+[node name="Visuals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[connection signal="body_entered" from="Shooting/Detection/DetectionArea" to="Shooting/Detection/DetectionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Shooting/Detection/DetectionArea" to="Shooting/Detection/DetectionArea" method="_on_body_exited"]
+[connection signal="timeout" from="Shooting/ShootCooldownTimer" to="Shooting" method="_on_ShootCooldownTimer_timeout"]

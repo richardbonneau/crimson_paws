@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://cl83ybd53y27d"]
 
-[ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
-[ext_resource type="Script" path="res://Main.gd" id="1_tjax3"]
-[ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
+[ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Logic/Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
+[ext_resource type="Script" path="res://Logic/Main.gd" id="1_tjax3"]
+[ext_resource type="PackedScene" uid="uid://bg4geq78kba0l" path="res://Logic/Level/BuildingBlocks/MobGround.tscn" id="2_28kvw"]
 [ext_resource type="PackedScene" uid="uid://co7hqdbhnpbj3" path="res://Managers/EnemiesProgress.tscn" id="2_nw5eb"]
-[ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
-[ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Level/Zones/exit.tscn" id="3_h8eii"]
-[ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Towers/TowerCore/TowerCore.tscn" id="3_osceu"]
-[ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Level/Zones/Start.tscn" id="5_0j6or"]
-[ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
+[ext_resource type="PackedScene" uid="uid://lgv7av81h7ac" path="res://Logic/Level/BuildingBlocks/UnwalkableGround.tscn" id="3_c8ijw"]
+[ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Logic/Level/Zones/exit.tscn" id="3_h8eii"]
+[ext_resource type="PackedScene" uid="uid://0i21jaey6f7i" path="res://Logic/Towers/TowerCore/TowerCore.tscn" id="3_osceu"]
+[ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Logic/Level/Zones/Start.tscn" id="5_0j6or"]
+[ext_resource type="PackedScene" uid="uid://brku42ciatbkw" path="res://Logic/Enemies/EnemyVariants/Snake/Snake.tscn" id="9_o233r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1py0j"]
 sky_top_color = Color(0.0352941, 0.964706, 0.980392, 1)

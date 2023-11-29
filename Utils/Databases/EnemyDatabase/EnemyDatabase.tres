@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="EnemyDatabase" load_steps=3 format=3 uid="uid://sxonfor1ixpc"]
-
-[ext_resource type="Script" path="res://Utils/Databases/EnemyDatabase/Scripts/EnemyDatabase.gd" id="1_33p5y"]
-[ext_resource type="Resource" uid="uid://uqakjy7qwk8d" path="res://Enemies/EnemyVariants/Snake/SnakeData.tres" id="1_rhdfs"]
-
-[resource]
-script = ExtResource("1_33p5y")
-enemy_database = Array[Resource("res://Utils/Databases/EnemyDatabase/Scripts/EnemyData.gd")]([ExtResource("1_rhdfs")])
