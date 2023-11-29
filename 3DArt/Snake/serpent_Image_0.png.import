@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxi4fy5ohi50d"
-path.s3tc="res://.godot/imported/serpent_Image_0.png-074a7807c1e568e75102cd5e69bce85a.s3tc.ctex"
+path.s3tc="res://.godot/imported/serpent_Image_0.png-5095eb6b88ff91b550385268632d1bf2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Logic/Enemies/EnemyVariants/Snake/RawImports/Snake/serpent_Image_0.png"
-dest_files=["res://.godot/imported/serpent_Image_0.png-074a7807c1e568e75102cd5e69bce85a.s3tc.ctex"]
+source_file="res://3DArt/Snake/serpent_Image_0.png"
+dest_files=["res://.godot/imported/serpent_Image_0.png-5095eb6b88ff91b550385268632d1bf2.s3tc.ctex"]
 
 [params]
 

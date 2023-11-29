@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm2m6ou4vvcds"
-path="res://.godot/imported/Image_0.png-f0364a507082245d07d6596b22bca6e1.ctex"
+uid="uid://o4rnb8bpunk7"
+path="res://.godot/imported/Image_0.001.png-0becc1053d7c4e74a8d17df02632f442.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logic/Enemies/EnemyVariants/Snake/RawImports/textures/Image_0.png"
-dest_files=["res://.godot/imported/Image_0.png-f0364a507082245d07d6596b22bca6e1.ctex"]
+source_file="res://3DArt/textures/Image_0.001.png"
+dest_files=["res://.godot/imported/Image_0.001.png-0becc1053d7c4e74a8d17df02632f442.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chb1wfph02cgm"
-path="res://.godot/imported/Snake.glb-53f533874ebe614982442c363ebfae90.scn"
+path="res://.godot/imported/Snake.glb-3f2c613b3fced4a7e01824050ea7345c.scn"
 
 [deps]
 
-source_file="res://Logic/Enemies/EnemyVariants/Snake/RawImports/Snake/Snake.glb"
-dest_files=["res://.godot/imported/Snake.glb-53f533874ebe614982442c363ebfae90.scn"]
+source_file="res://3DArt/Snake/Snake.glb"
+dest_files=["res://.godot/imported/Snake.glb-3f2c613b3fced4a7e01824050ea7345c.scn"]
 
 [params]
 
