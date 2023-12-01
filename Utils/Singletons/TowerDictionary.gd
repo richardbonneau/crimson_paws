@@ -2,6 +2,7 @@ extends Node
 
 enum TowerType {
 	ARROW = 0,
+	GATLING_GUM = 1
 }
 
 var tower_dictionary:Dictionary = {}

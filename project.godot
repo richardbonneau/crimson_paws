@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Crimson Paws"
 run/main_scene="res://Logic/Main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,6 +29,13 @@ movie_writer/movie_file="C:/Users/rlegi/godot/crimson_paws_movies/crimson_paws_m
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ThirdPersonTemplate/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Logic/Enemies/": "red",
+"res://Logic/Towers/": "green"
+}
 
 [input]
 
