@@ -25,7 +25,7 @@ func take_damage(incoming_damage:float):
 	if current_health < 1:
 		death()
 
-func death():
+func death()->void:
 	# Remove the collisionshape so that it doesn't appear in the target lists of towers
 	scene_root.get_node("CollisionShape3D").queue_free()
 	health_bar.queue_free()
@@ -36,5 +36,5 @@ func death():
 	$DeathParticles.restart()
 	$DeathTimer.start()
 
-func _on_death_timer_timeout():
+func _on_death_timer_timeout()->void:
 	scene_root.queue_free()

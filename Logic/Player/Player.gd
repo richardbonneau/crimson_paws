@@ -11,7 +11,7 @@ extends CharacterBody3D
 var target_position: Vector3 = Vector3.ZERO
 var moving: bool = false
 
-var is_in_build_mode = false
+var is_in_build_mode: bool = false
 
 @onready var navigation_agent:NavigationAgent3D = $NavigationAgent3D
 

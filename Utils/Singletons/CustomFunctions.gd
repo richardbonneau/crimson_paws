@@ -23,7 +23,7 @@ func append_instance_to_node3d(instance_position:Vector3, instance: Node3D, pare
 	instance.global_transform.origin = instance_position
 	return instance
 
-func change_node_visibility(node3d:Node3D, is_visible: bool):
+func change_node_visibility(node3d:Node3D, is_visible: bool)->void:
 	if node3d.visible == !is_visible:
 		node3d.visible = is_visible
 

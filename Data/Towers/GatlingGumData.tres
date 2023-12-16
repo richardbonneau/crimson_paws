@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="TowerData" load_steps=4 format=3 uid="uid://ce2pk6l5sl324"]
 
-[ext_resource type="PackedScene" uid="uid://cja5tuqr1f4p3" path="res://Logic/Towers/TowerVariants/ArrowTurret/Visuals/ArrowTurretVisuals.tscn" id="1_1vi4s"]
-[ext_resource type="PackedScene" uid="uid://df71bs5xjijf0" path="res://Logic/Towers/TowerVariants/ArrowTurret/ArrowTurret.tscn" id="2_ch6lf"]
+[ext_resource type="PackedScene" uid="uid://bnx7nqsjabs12" path="res://Logic/Towers/TowerVariants/GatlingGum/Visuals/GatlingGumVisuals.tscn" id="1_fw4ue"]
+[ext_resource type="PackedScene" uid="uid://cicdcy5iqosfg" path="res://Logic/Towers/TowerVariants/GatlingGum/GatlingGum.tscn" id="2_e8orx"]
 [ext_resource type="Script" path="res://Data/_Scripts/TowerData.gd" id="3_ogf1q"]
 
 [resource]
 script = ExtResource("3_ogf1q")
-id = 0
+id = 1
 damage = 1.0
-attack_speed = 0.5
+attack_speed = 0.2
 radius = 10.0
-scene = ExtResource("2_ch6lf")
-building_preview_scene = ExtResource("1_1vi4s")
+scene = ExtResource("2_e8orx")
+building_preview_scene = ExtResource("1_fw4ue")

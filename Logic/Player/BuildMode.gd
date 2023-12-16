@@ -34,8 +34,8 @@ func display_tower_preview(tower_ground: Node3D) -> void:
 
 	if build_pos != build_location:
 		if tower_preview == null:
-			var arrow_tower_build_preview:Node3D = TowerDictionary.create_tower_build_preview(TowerDictionary.TowerType.ARROW)
-			tower_preview = CustomFunctions.append_instance_to_node3d(build_pos, arrow_tower_build_preview)
+			var gatling_gum_tower_build_preview:Node3D = TowerDictionary.create_tower_build_preview(TowerDictionary.TowerType.GATLING_GUM)
+			tower_preview = CustomFunctions.append_instance_to_node3d(build_pos, gatling_gum_tower_build_preview)
 		else:
 			CustomFunctions.change_node_visibility(tower_preview, true)
 			tower_preview.global_transform.origin = build_pos
@@ -45,8 +45,8 @@ func display_tower_preview(tower_ground: Node3D) -> void:
 func build_tower(event) -> void:
 	if build_location != Vector3.INF and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		# Instantiate and create tower
-		var arrow_tower_scene:Node3D = TowerDictionary.create_tower_instance(TowerDictionary.TowerType.ARROW)
-		CustomFunctions.append_instance_to_node3d(build_location, arrow_tower_scene, towers_container)
+		var gatling_gum_tower_scene:Node3D = TowerDictionary.create_tower_instance(TowerDictionary.TowerType.GATLING_GUM)
+		CustomFunctions.append_instance_to_node3d(build_location, gatling_gum_tower_scene, towers_container)
 		# Delete Tower Preview
 		tower_preview.queue_free()
 		tower_preview = null
