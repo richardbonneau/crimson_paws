@@ -13,7 +13,6 @@ var moving: bool = false
 
 var is_in_build_mode = false
 
-@onready var third_person_camera:ThirdPersonCamera = $ThirdPersonCamera
 @onready var navigation_agent:NavigationAgent3D = $NavigationAgent3D
 
 func _ready():
@@ -21,7 +20,6 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	player_movement(event)
-	camera_zoom(event)
 
 func player_movement(event: InputEvent) ->void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
@@ -31,21 +29,6 @@ func player_movement(event: InputEvent) ->void:
 			target_position = result.position
 			moving = true
 			navigation_agent.set_target_position(target_position)
-
-func camera_zoom(event:InputEvent):
-	if event is InputEventMouseButton:
-		var new_dive_angle:float = third_person_camera.initial_dive_angle_deg
-		var new_distance_from_pivot:float = third_person_camera.distance_from_pivot
-		if event.is_action_pressed("zoom_in"):
-			new_dive_angle += dive_angle_speed
-			new_distance_from_pivot -= zoom_speed
-		elif event.is_action_pressed("zoom_out"):
-			new_dive_angle -= dive_angle_speed
-			new_distance_from_pivot += zoom_speed
-		
-		if new_dive_angle < min_zoom_deg and new_dive_angle > max_zoom_deg:
-			third_person_camera.initial_dive_angle_deg = new_dive_angle
-			third_person_camera.distance_from_pivot = new_distance_from_pivot
 
 func _physics_process(delta: float) -> void:
 	if navigation_agent.is_navigation_finished():

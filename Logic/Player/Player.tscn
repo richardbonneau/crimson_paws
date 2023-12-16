@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmg7nq8d0tb3u"]
+[gd_scene load_steps=5 format=3 uid="uid://cmg7nq8d0tb3u"]
 
 [ext_resource type="Script" path="res://Logic/Player/Player.gd" id="1_da170"]
-[ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="2_ft658"]
 [ext_resource type="PackedScene" uid="uid://ck5ehjwxiv8my" path="res://addons/ThirdPersonTemplate/Character/Nodes/mannequiny_0_4_0.tscn" id="3_lb2x5"]
 [ext_resource type="Script" path="res://Logic/Player/BuildMode.gd" id="4_3fkx2"]
 
@@ -13,10 +12,6 @@ height = 1.61267
 collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_da170")
-
-[node name="ThirdPersonCamera" parent="." instance=ExtResource("2_ft658")]
-initial_dive_angle_deg = -60.0
-spring_arm_collision_mask = 33
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.6

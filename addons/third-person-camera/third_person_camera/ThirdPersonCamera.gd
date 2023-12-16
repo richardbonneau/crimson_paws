@@ -2,6 +2,7 @@
 @tool
 class_name ThirdPersonCamera extends Node3D
 
+@export var player_to_follow:CharacterBody3D
 
 @onready var _camera := $Camera
 @onready var _camera_rotation_pivot = $RotationPivot
@@ -23,7 +24,7 @@ class_name ThirdPersonCamera extends Node3D
 ##  
 @export_range(-90.0, 90.0) var initial_dive_angle_deg := -20.0 :
 	set(value) :
-		initial_dive_angle_deg = clampf(value, tilt_lower_limit_deg, tilt_upper_limit_deg)
+		initial_dive_angle_deg = value
 
 ## 
 @export_range(-90.0, 90.0) var tilt_upper_limit_deg := 60.0
@@ -101,6 +102,12 @@ func _physics_process(_delta):
 	_process_horizontal_rotation_input()
 	_update_camera_tilt()
 	_update_camera_horizontal_rotation()
+	
+	follow_player()
+
+func follow_player():
+	self.transform.origin.x = player_to_follow.transform.origin.x
+	self.transform.origin.z = player_to_follow.transform.origin.z
 
 func tweenCameraToMarker() :
 	var tween = create_tween()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl83ybd53y27d"]
+[gd_scene load_steps=16 format=3 uid="uid://cl83ybd53y27d"]
 
 [ext_resource type="PackedScene" uid="uid://nfjm7kkpowr0" path="res://Logic/Level/BuildingBlocks/TowerGround.tscn" id="1_5585g"]
 [ext_resource type="Script" path="res://Logic/Main.gd" id="1_tjax3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bydtbq3cb73d3" path="res://Logic/Level/Zones/exit.tscn" id="3_h8eii"]
 [ext_resource type="PackedScene" uid="uid://d3uca5j7at3pi" path="res://Logic/Level/Zones/Start.tscn" id="5_0j6or"]
 [ext_resource type="Script" path="res://Logic/UI/Lives.gd" id="9_7rnwd"]
+[ext_resource type="Script" path="res://Logic/Player/PlayerCamera.gd" id="9_upwiy"]
 [ext_resource type="PackedScene" uid="uid://cmg7nq8d0tb3u" path="res://Logic/Player/Player.tscn" id="10_57nnn"]
 [ext_resource type="Script" path="res://Logic/UI/temp_spawn_snake.gd" id="11_1hx37"]
 [ext_resource type="Script" path="res://Logic/UI/temp_build_mode_ui.gd" id="11_6682h"]
@@ -633,6 +634,11 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("10_57nnn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player_to_follow")]
+transform = Transform3D(1, 0, 0, 0, 0.0348995, 0.999391, 0, -0.999391, 0.0348995, -4, 7.97653, 0)
+script = ExtResource("9_upwiy")
+player_to_follow = NodePath("../Player")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
