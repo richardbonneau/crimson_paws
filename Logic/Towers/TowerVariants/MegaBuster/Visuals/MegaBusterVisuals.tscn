@@ -1182,7 +1182,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6.25571, 0)
 
 [node name="Light" type="OmniLight3D" parent="Mega BusterMergedLight"]
 transform = Transform3D(-0.290865, -0.771101, 0.566393, -0.055189, 0.604525, 0.794672, -0.955171, 0.199883, -0.218391, 4.07625, 7.68723, -1.66857)
-light_color = Color(1, 1, 1, 1)
 light_energy = 54351.4
 omni_range = 4096.0
 
